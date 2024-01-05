@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'DKCloudFramework_Example' do
+  pod 'DKCloudFramework', :path => '../'
+
+  target 'DKCloudFramework_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
