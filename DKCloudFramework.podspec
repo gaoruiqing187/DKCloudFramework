@@ -31,7 +31,9 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'DKCloudFramework/Classes/**/*'
-  
+  s.pod_target_xcconfig = {
+      'VALID_ARCHS' => 'arm64 x86_64'
+  }
   # s.resource_bundles = {
   #   'DKCloudFramework' => ['DKCloudFramework/Assets/*.png']
   # }
