@@ -1,0 +1,30 @@
+{
+  "name": "DKCloudFramework",
+  "version": "1.0.0",
+  "summary": "A short description of DKCloudFramework.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/gaoruiqing187/DKCloudFramework",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "gaoruiqing187": "494063010@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/gaoruiqing187/DKCloudFramework.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "DKCloudFramework/Classes/**/*",
+  "dependencies": {
+    "Starscream": [
+
+    ],
+    "linphone-sdk-novideo": [
+
+    ]
+  }
+}

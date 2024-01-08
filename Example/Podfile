@@ -1,13 +1,25 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://gitlab.linphone.org/BC/public/podspec.git'
+
 use_frameworks!
 
 platform :ios, '10.0'
 
 target 'DKCloudFramework_Example' do
   pod 'DKCloudFramework', :path => '../'
-
+  pod 'Starscream'
+  pod 'linphone-sdk-novideo'
   target 'DKCloudFramework_Tests' do
     inherit! :search_paths
+    pod 'Starscream'
+    pod 'linphone-sdk-novideo'
+  end
+end
 
-    
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
+    end
   end
 end
