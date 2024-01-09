@@ -180,6 +180,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/linphone-sdk-novideo/linphonesw.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-ios.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-tester.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belcard.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belle-sip.framework"
@@ -194,13 +195,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mssilk.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mswebrtc.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ortp.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ZXing.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/DKCloudFramework/DKCloudFramework.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/linphone-sdk-novideo/linphonesw.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-ios.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-tester.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belcard.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belle-sip.framework"
@@ -215,7 +216,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mssilk.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mswebrtc.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ortp.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ZXing.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

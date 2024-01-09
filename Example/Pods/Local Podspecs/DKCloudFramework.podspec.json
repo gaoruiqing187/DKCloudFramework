@@ -19,6 +19,9 @@
     "ios": "10.0"
   },
   "source_files": "DKCloudFramework/Classes/**/*",
+  "pod_target_xcconfig": {
+    "VALID_ARCHS": "arm64 x86_64"
+  },
   "dependencies": {
     "Starscream": [
 

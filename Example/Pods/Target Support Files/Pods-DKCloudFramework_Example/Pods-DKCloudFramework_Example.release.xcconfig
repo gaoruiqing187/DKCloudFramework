@@ -5,7 +5,7 @@ GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DKCloudFramework/DKCloudFramework.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Starscream/Starscream.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/linphone-sdk-novideo/linphonesw.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) /usr/lib/swift '@executable_path/Frameworks' '@loader_path/Frameworks'
 LIBRARY_SEARCH_PATHS = $(inherited) "${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift
-OTHER_LDFLAGS = $(inherited) -framework "DKCloudFramework" -framework "Starscream" -framework "ZXing" -framework "bctoolbox" -framework "bctoolbox-ios" -framework "belcard" -framework "belle-sip" -framework "belr" -framework "lime" -framework "linphone" -framework "linphonesw" -framework "linphonetester" -framework "mediastreamer2" -framework "msamr" -framework "mscodec2" -framework "msopenh264" -framework "mssilk" -framework "mswebrtc" -framework "ortp"
+OTHER_LDFLAGS = $(inherited) -framework "DKCloudFramework" -framework "Starscream" -framework "bctoolbox" -framework "bctoolbox-ios" -framework "bctoolbox-tester" -framework "belcard" -framework "belle-sip" -framework "belr" -framework "lime" -framework "linphone" -framework "linphonesw" -framework "linphonetester" -framework "mediastreamer2" -framework "msamr" -framework "mscodec2" -framework "msopenh264" -framework "mssilk" -framework "mswebrtc" -framework "ortp"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

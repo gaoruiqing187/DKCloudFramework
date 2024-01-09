@@ -189,7 +189,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				846D6C8251FE71A613195DA1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,58 +286,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		846D6C8251FE71A613195DA1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DKCloudFramework_Tests/Pods-DKCloudFramework_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
-				"${BUILT_PRODUCTS_DIR}/linphone-sdk-novideo/linphonesw.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-ios.framework/bctoolbox-ios",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox.framework/bctoolbox",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belcard.framework/belcard",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belle-sip.framework/belle-sip",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belr.framework/belr",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/lime.framework/lime",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/linphone.framework/linphone",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/linphonetester.framework/linphonetester",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mediastreamer2.framework/mediastreamer2",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/msamr.framework/msamr",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mscodec2.framework/mscodec2",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/msopenh264.framework/msopenh264",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mssilk.framework/mssilk",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mswebrtc.framework/mswebrtc",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ortp.framework/ortp",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ZXing.framework/ZXing",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphonesw.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox-ios.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belcard.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belle-sip.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belr.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/lime.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphone.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphonetester.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mediastreamer2.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/msamr.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mscodec2.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/msopenh264.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mssilk.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mswebrtc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ortp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZXing.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DKCloudFramework_Tests/Pods-DKCloudFramework_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B2F60D85748D1E4DC8074E57 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +319,7 @@
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/linphone-sdk-novideo/linphonesw.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-ios.framework/bctoolbox-ios",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-tester.framework/bctoolbox-tester",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox.framework/bctoolbox",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belcard.framework/belcard",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belle-sip.framework/belle-sip",
@@ -386,7 +334,6 @@
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mssilk.framework/mssilk",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mswebrtc.framework/mswebrtc",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ortp.framework/ortp",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ZXing.framework/ZXing",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -394,6 +341,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphonesw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox-ios.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox-tester.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belcard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belle-sip.framework",
@@ -408,7 +356,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mssilk.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mswebrtc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ortp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZXing.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

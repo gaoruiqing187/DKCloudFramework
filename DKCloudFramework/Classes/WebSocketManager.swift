@@ -6,10 +6,8 @@
 //
 
 import Foundation
-import SwiftUI
-import Starscream
 
-protocol DKWebSocketDelegate{
+public protocol DKWebSocketDelegate{
     /**websocket 连接成功*/
     func websocketDidConnect()
         /**websocket 连接失败*/
@@ -18,7 +16,7 @@ protocol DKWebSocketDelegate{
     func websocketDidReceiveMessage(message: String)
 }
 
-class WebSocketManager :  WebSocketDelegate{
+public class WebSocketManager :  WebSocketDelegate{
 
     static let shard = WebSocketManager()
 
@@ -32,16 +30,16 @@ class WebSocketManager :  WebSocketDelegate{
     var onReceiveMessage: ((String) -> Void)?
     var onError: (() -> Void)?
 
-    init(){
+    private init(){
         isConnected = false
     }
 
-    func getConnectedStatus() -> Bool{
+    public func getConnectedStatus() -> Bool{
         return isConnected
     }
 
     //, handler:@escaping (Bool,String?)->Void
-    func registerAccount(url:String){
+    public func registerAccount(url:String){
 //        onRegiste = handler
         var request = URLRequest(url: URL(string: url)!)
         request.timeoutInterval = 5
@@ -63,16 +61,16 @@ class WebSocketManager :  WebSocketDelegate{
 
     public func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
-        case .connected(let dict):
+        case .connected(_):
             isConnected = true
             delegate?.websocketDidConnect()
-            startHeartbeatTimer()
+//            startHeartbeatTimer()
         case .disconnected(let string, _):
             isConnected = false
             delegate?.websocketDidDisconnect(error: string)
         case .text(let message):
             delegate?.websocketDidReceiveMessage(message: message)
-            
+
         case .binary(let data):
             print(data)
         case .pong(_):
@@ -89,12 +87,10 @@ class WebSocketManager :  WebSocketDelegate{
         case .cancelled:
             print(#function + "cancelled")
             isConnected = false
-        @unknown default:
-            fatalError()
         }
     }
 
-    func handleError(_ error: Error?) {
+    private func handleError(_ error: Error?) {
         if let e = error as? WSError {
             print("websocket encountered an error: \(e.message)")
         } else if let e = error {
@@ -104,7 +100,7 @@ class WebSocketManager :  WebSocketDelegate{
         }
     }
 
-    func startHeartbeatTimer() {
+    private func startHeartbeatTimer() {
         // 创建一个定时器，每隔一定时间发送心跳包
         Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { timer in
             // 发送心跳包消息
@@ -112,7 +108,7 @@ class WebSocketManager :  WebSocketDelegate{
         }
     }
 
-    func sendHeartbeat() {
+    private func sendHeartbeat() {
         // 发送心跳包消息到服务器
         var dict : [String:Any] = [:]
         dict["eventType"] = "Heartbeat"
