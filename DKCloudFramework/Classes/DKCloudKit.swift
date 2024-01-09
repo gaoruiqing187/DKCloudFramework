@@ -416,15 +416,15 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    internal func websocketDidConnect(){
+    public func websocketDidConnect(){
         print("Socket 已链接")
     }
         /**websocket 连接失败*/
-    internal func websocketDidDisconnect(error: String){
+    public func websocketDidDisconnect(error: String){
         print("Socket 链接失败: \(error)")
     }
         /**websocket 接受文字信息*/
-    internal func websocketDidReceiveMessage(message: String){
+    public func websocketDidReceiveMessage(message: String){
         if message.contains("HangupEvent"){
             return
         }
