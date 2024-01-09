@@ -23,11 +23,17 @@ variant_for_slice()
   "bctoolbox-ios.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "bctoolbox.xcframework/ios-arm64")
+  "bctoolbox-tester.xcframework/ios-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
+  "bctoolbox-tester.xcframework/ios-arm64")
     echo ""
     ;;
   "bctoolbox.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
+    ;;
+  "bctoolbox.xcframework/ios-arm64")
+    echo ""
     ;;
   "belcard.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
@@ -41,23 +47,23 @@ variant_for_slice()
   "belle-sip.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "belr.xcframework/ios-arm64")
-    echo ""
-    ;;
   "belr.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "lime.xcframework/ios-arm64")
+  "belr.xcframework/ios-arm64")
     echo ""
     ;;
   "lime.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "linphone.xcframework/ios-arm64")
+  "lime.xcframework/ios-arm64")
     echo ""
     ;;
   "linphone.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
+    ;;
+  "linphone.xcframework/ios-arm64")
+    echo ""
     ;;
   "linphonetester.xcframework/ios-arm64")
     echo ""
@@ -65,17 +71,17 @@ variant_for_slice()
   "linphonetester.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "mediastreamer2.xcframework/ios-arm64")
-    echo ""
-    ;;
   "mediastreamer2.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "msamr.xcframework/ios-arm64_x86_64-simulator")
-    echo "simulator"
+  "mediastreamer2.xcframework/ios-arm64")
+    echo ""
     ;;
   "msamr.xcframework/ios-arm64")
     echo ""
+    ;;
+  "msamr.xcframework/ios-arm64_x86_64-simulator")
+    echo "simulator"
     ;;
   "mscodec2.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
@@ -95,22 +101,16 @@ variant_for_slice()
   "mssilk.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "mswebrtc.xcframework/ios-arm64_x86_64-simulator")
-    echo "simulator"
-    ;;
   "mswebrtc.xcframework/ios-arm64")
     echo ""
     ;;
-  "ortp.xcframework/ios-arm64")
-    echo ""
+  "mswebrtc.xcframework/ios-arm64_x86_64-simulator")
+    echo "simulator"
     ;;
   "ortp.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "ZXing.xcframework/ios-arm64_x86_64-simulator")
-    echo "simulator"
-    ;;
-  "ZXing.xcframework/ios-arm64")
+  "ortp.xcframework/ios-arm64")
     echo ""
     ;;
   esac
@@ -125,11 +125,17 @@ archs_for_slice()
   "bctoolbox-ios.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
-  "bctoolbox.xcframework/ios-arm64")
+  "bctoolbox-tester.xcframework/ios-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
+  "bctoolbox-tester.xcframework/ios-arm64")
     echo "arm64"
     ;;
   "bctoolbox.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
+    ;;
+  "bctoolbox.xcframework/ios-arm64")
+    echo "arm64"
     ;;
   "belcard.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
@@ -143,23 +149,23 @@ archs_for_slice()
   "belle-sip.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
-  "belr.xcframework/ios-arm64")
-    echo "arm64"
-    ;;
   "belr.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
-  "lime.xcframework/ios-arm64")
+  "belr.xcframework/ios-arm64")
     echo "arm64"
     ;;
   "lime.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
-  "linphone.xcframework/ios-arm64")
+  "lime.xcframework/ios-arm64")
     echo "arm64"
     ;;
   "linphone.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
+    ;;
+  "linphone.xcframework/ios-arm64")
+    echo "arm64"
     ;;
   "linphonetester.xcframework/ios-arm64")
     echo "arm64"
@@ -167,17 +173,17 @@ archs_for_slice()
   "linphonetester.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
-  "mediastreamer2.xcframework/ios-arm64")
-    echo "arm64"
-    ;;
   "mediastreamer2.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
-  "msamr.xcframework/ios-arm64_x86_64-simulator")
-    echo "arm64 x86_64"
+  "mediastreamer2.xcframework/ios-arm64")
+    echo "arm64"
     ;;
   "msamr.xcframework/ios-arm64")
     echo "arm64"
+    ;;
+  "msamr.xcframework/ios-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
     ;;
   "mscodec2.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
@@ -197,22 +203,16 @@ archs_for_slice()
   "mssilk.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
-  "mswebrtc.xcframework/ios-arm64_x86_64-simulator")
-    echo "arm64 x86_64"
-    ;;
   "mswebrtc.xcframework/ios-arm64")
     echo "arm64"
     ;;
-  "ortp.xcframework/ios-arm64")
-    echo "arm64"
+  "mswebrtc.xcframework/ios-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
     ;;
   "ortp.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
-  "ZXing.xcframework/ios-arm64_x86_64-simulator")
-    echo "arm64 x86_64"
-    ;;
-  "ZXing.xcframework/ios-arm64")
+  "ortp.xcframework/ios-arm64")
     echo "arm64"
     ;;
   esac
@@ -298,19 +298,19 @@ install_xcframework() {
 }
 
 install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox-ios.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
-install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
+install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox-tester.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
+install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
 install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/belcard.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
 install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/belle-sip.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
-install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/belr.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
-install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/lime.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
-install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/linphone.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
+install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/belr.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
+install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/lime.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
+install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/linphone.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
 install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/linphonetester.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
-install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/mediastreamer2.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
-install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/msamr.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
+install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/mediastreamer2.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
+install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/msamr.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
 install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/mscodec2.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
 install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/msopenh264.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
 install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/mssilk.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
-install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/mswebrtc.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
-install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/ortp.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
-install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/ZXing.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
+install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/mswebrtc.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
+install_xcframework "${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/ortp.xcframework" "linphone-sdk-novideo" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
 

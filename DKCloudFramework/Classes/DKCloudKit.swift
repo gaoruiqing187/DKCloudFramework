@@ -211,17 +211,17 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
         
         onRegisteBlock = handler
-        let url = "wss://zhcc-test.diankongcloud.cn:8311/ws/agent?agentid=\(agentId)&extension=\(extensionId)&projectId=\(projectId)&token=\(token)&source=1&queue="
+        let urls = "wss://\(url)/ws/agent?agentid=\(agentId)&extension=\(extensionId)&projectId=\(projectId)&token=\(token)&source=1&queue="
         userAccount.extensionId = extensionId
         userAccount.projectId = projectId
         userAccount.agentId = agentId
         userAccount.token = token
         userAccount.password = password
-        socketManager.registerAccount(url: url)
+        socketManager.registerAccount(url: urls)
     }
     
     private func callOut(){
-        var dict :Dictionary<String,Any> = Dictionary()
+        var dict :[String:Any] = [:]
         dict["eventType"] = "MakeCall"
         dict["telx"] = userAccount.telx
         dict["userfield"] = userAccount.userfield
@@ -310,7 +310,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     
     public func changeOver(callNum:String, mode: Int = 0){
         if mCore.currentCall != nil {
-            var dict :Dictionary<String,Any> = Dictionary()
+            var dict :[String:Any] = [:]
             dict["eventType"] = "AgentInterface"
             dict["type"] = "atxfer"
             dict["agentid"] = userAccount.agentId
@@ -326,7 +326,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     
     public func changeOverHangUp(){
         if mCore.currentCall != nil {
-            var dict :Dictionary<String,Any> = Dictionary()
+            var dict :[String:Any] = [:]
             dict["eventType"] = "AgentInterface"
             dict["type"] = "atxferHangup"
             dict["agentid"] = userAccount.agentId
@@ -365,7 +365,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     }
     
     private func logOutAgent(){
-        var dict :Dictionary<String,Any> = Dictionary()
+        var dict :[String:Any] = [:]
         dict["eventType"] = "AgentInterface"
         dict["type"] = "agentlogout"
         dict["agentid"] = userAccount.agentId
@@ -377,7 +377,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     }
     
     private func setAgentStatus(){
-        var dict :Dictionary<String,Any> = Dictionary()
+        var dict :[String:Any] = [:]
         dict["eventType"] = "AgentState"
         let state = (userAccount.agentState == 0 ? 1 : 0)
         dict["state"] = state

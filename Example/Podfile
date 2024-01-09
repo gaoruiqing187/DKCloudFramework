@@ -11,8 +11,6 @@ target 'DKCloudFramework_Example' do
   pod 'linphone-sdk-novideo'
   target 'DKCloudFramework_Tests' do
     inherit! :search_paths
-    pod 'Starscream'
-    pod 'linphone-sdk-novideo'
   end
 end
 

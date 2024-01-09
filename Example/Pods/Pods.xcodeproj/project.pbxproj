@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		051C8ADBFE6C44C5A033A29691E16E0A /* Pods-DKCloudFramework_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A05AC74DD10C82DFE2F4DA2CB442CD6 /* Pods-DKCloudFramework_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0689428EBA7E5F07C4DF6BF16CBF071E /* Pods-DKCloudFramework_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B312369FE78B875FD311FD183515F8F /* Pods-DKCloudFramework_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		051C8ADBFE6C44C5A033A29691E16E0A /* Pods-DKCloudFramework_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBEEC86A0ECEED2FC343A44BA4C6AE92 /* Pods-DKCloudFramework_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08BA695368A29E6991FE459E61F64D1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87548CCE446AE3EFE02654D5104F88B /* Foundation.framework */; };
 		0F25764C6AE9A007E0CBCF7748B63A6E /* HTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D524D0138AECBD55937E406C1555E1 /* HTTPHandler.swift */; };
 		125E5AD8CD657CA106DBC4785C6CAC3B /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC73EADE5F286BD24DE6DBD4D5FCED1 /* WebSocketManager.swift */; };
 		1A51BED09844E79BA371F8156063387F /* DKCloudFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DC89B78BAA6323CDEA0076231E622A /* DKCloudFramework-dummy.m */; };
@@ -16,7 +16,6 @@
 		2BFB9C90E34501DFC1A4C390FD3BAECC /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174A20F67B5D2C212559A3D0791DBB87 /* Engine.swift */; };
 		2FDF6BAABA06DE38FB7D0224B1374300 /* DKCloudFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB86E4B704888915F6CD9FA90893B33 /* DKCloudFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37A3A01F6BFD31008CB32BDB7C354F0A /* TransformUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D435ABD8457863757F5E2F2672CF38EC /* TransformUtils.swift */; };
-		3A85451D0D09DCF8C48965893FD1C453 /* Pods-DKCloudFramework_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C368A43E63C72D6CCBB434C668709FAF /* Pods-DKCloudFramework_Tests-dummy.m */; };
 		3D444E374D57AA9D517CDE06CFC30EFE /* FoundationHTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB91EA6EA6FA71A1DFB7AA3551446C48 /* FoundationHTTPHandler.swift */; };
 		3E19985004AAF9E6381A988FAF445A40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87548CCE446AE3EFE02654D5104F88B /* Foundation.framework */; };
 		47B686AB751FCC75EF786C5F1D0403DD /* bctoolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E21A69C8EB882F4028FF8E60D7D6AE /* bctoolbox.framework */; };
@@ -31,8 +30,7 @@
 		84E6C03908D326294951ADF8300E5CCA /* linphone-sdk-novideo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 756DFB667F85BD05F5C6B60D3D0C5458 /* linphone-sdk-novideo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86A4B483A5BB8DB1439728A902A84B8A /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABDEE0E9EB9D2E4DCDFA2E784CF26D13 /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8EC1D8792800475839B9B2CDC9F71023 /* linphone-sdk-novideo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C4BA7B63487B53F0B43CE61DD2F1A0 /* linphone-sdk-novideo-dummy.m */; };
-		925731944BED26CF9D0D98E3750C7795 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87548CCE446AE3EFE02654D5104F88B /* Foundation.framework */; };
-		AA61CEF8EC800FB4C9B896DED9B3DA2B /* Pods-DKCloudFramework_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EB34E56A7A1F25206D8F3DFB871886 /* Pods-DKCloudFramework_Example-dummy.m */; };
+		AA61CEF8EC800FB4C9B896DED9B3DA2B /* Pods-DKCloudFramework_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A66A0A4B14BAFF27500F1966E8F3F1 /* Pods-DKCloudFramework_Example-dummy.m */; };
 		AC482DD47399204308AE6A42B057B9C8 /* WebSocketServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF59DBF38D80F0F0BD2661A3204D0CF /* WebSocketServer.swift */; };
 		ADB2DD1A1FD9777BA387917624D9426E /* TCPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DACBBF325A5D3A37DDE893F61EA617 /* TCPTransport.swift */; };
 		B8B14D2FE8970E38E8DA94FF7D9E4458 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B15EDC4D1CB58765F7447B535B7F89 /* Starscream-dummy.m */; };
@@ -41,9 +39,11 @@
 		C61353059F9CC2DE09E149887184E744 /* Framer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF52C7119081481F207CF4694FACAB /* Framer.swift */; };
 		D1827CCAB20956DCE0A2885B0D7FB003 /* WSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20AC8B785560A33F21A24470DCEBE3 /* WSEngine.swift */; };
 		D32F409824E13B2475120FA102561C4F /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439216F628792E23224F6B76A6FD9DE /* Compression.swift */; };
+		D59D5A6BE1AA6F4ABE5F2D8806ED1D44 /* Pods-DKCloudFramework_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C17297D063CD513250B61D7991F57EB0 /* Pods-DKCloudFramework_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7DFCAC7881B9F57F1DAA6643157957C /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F134C92D03244EB3CC088AB26C0FC74 /* Transport.swift */; };
 		DDBED2080ECCD92FDA3F4D0C176E2066 /* FoundationHTTPServerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3EA2BEB63DC349177B6D5AF6DDD534 /* FoundationHTTPServerHandler.swift */; };
 		DFA413B727156E0662D7CBC9BED48D02 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB76B9BD5BF875BA10B5ADC3BDFC767 /* ReplaceMe.swift */; };
+		E0720A5A636AC2788923E3F0E6BE0457 /* Pods-DKCloudFramework_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AA48DED30C4D03419112FA381CEC49 /* Pods-DKCloudFramework_Tests-dummy.m */; };
 		E30E419C267D1AD2C84D64572C921256 /* FoundationTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D843045BD9C28E63EA02517EADFF025 /* FoundationTransport.swift */; };
 		E6B5AAACBE009D10CF04A149172B4016 /* StringHTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0AB00704F4BE972DA514144B17A5CE /* StringHTTPHandler.swift */; };
 		E90E4BC0B6580CF9396277D3446E182C /* WSCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1581B75947F47C64AF218D3FC25609 /* WSCompression.swift */; };
@@ -67,12 +67,12 @@
 			remoteGlobalIDString = 9B78EE4AF6AE03E79D88886319853FF7;
 			remoteInfo = Starscream;
 		};
-		5C339FD325278C17D8E7692189485004 /* PBXContainerItemProxy */ = {
+		706C3BC4F820B5F283A89D8EDA6DFA81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9B78EE4AF6AE03E79D88886319853FF7;
-			remoteInfo = Starscream;
+			remoteGlobalIDString = EC887C85F0713E0517C255E518A24829;
+			remoteInfo = "Pods-DKCloudFramework_Example";
 		};
 		8B32E93E6E388AF0099C5E16F230A036 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -80,13 +80,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9B78EE4AF6AE03E79D88886319853FF7;
 			remoteInfo = Starscream;
-		};
-		90B7EBD40B4A7C153EFDCD647C0FB186 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A59B2CBBECE489C0CC7F4D55811E3DE2;
-			remoteInfo = "linphone-sdk-novideo";
 		};
 		A55D1E683F871D85D665AEAAE056A1C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -102,110 +95,102 @@
 			remoteGlobalIDString = A59B2CBBECE489C0CC7F4D55811E3DE2;
 			remoteInfo = "linphone-sdk-novideo";
 		};
-		EE5EE9C4C8590D7DCC4D333D306940FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EC887C85F0713E0517C255E518A24829;
-			remoteInfo = "Pods-DKCloudFramework_Example";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0076168325C6CBD1F0479268D0DC9217 /* Pods-DKCloudFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DKCloudFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0926134D797E58FFCB9FAA2D76B5822C /* lime.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = lime.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/lime.xcframework"; sourceTree = "<group>"; };
+		04BAC521CD42F00C524559E8AACE2861 /* belr.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = belr.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/belr.xcframework"; sourceTree = "<group>"; };
+		05E99A3CBAE57C225B43B9A100C15ED5 /* mscodec2.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = mscodec2.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/mscodec2.xcframework"; sourceTree = "<group>"; };
 		0FEFB079B58C4057A88B5AA36C0699CF /* linphone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = linphone.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/linphone.framework; sourceTree = DEVELOPER_DIR; };
 		11E6C6D70F2432F1BA832CEE926F4911 /* LinphoneWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinphoneWrapper.swift; path = "linphone-sdk-novideo/apple-darwin/share/linphonesw/LinphoneWrapper.swift"; sourceTree = "<group>"; };
-		16496226978B537073CB72E902C22DCC /* Pods-DKCloudFramework_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DKCloudFramework_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		174A20F67B5D2C212559A3D0791DBB87 /* Engine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Engine.swift; path = Sources/Engine/Engine.swift; sourceTree = "<group>"; };
 		1E3EA2BEB63DC349177B6D5AF6DDD534 /* FoundationHTTPServerHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationHTTPServerHandler.swift; path = Sources/Framer/FoundationHTTPServerHandler.swift; sourceTree = "<group>"; };
-		1F59A294FD83B0AEBC508B4016EEB86F /* belle-sip.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = "belle-sip.xcframework"; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/belle-sip.xcframework"; sourceTree = "<group>"; };
-		2549E1CB83B33336A4C0EC3DB01E4793 /* DKCloudFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKCloudFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2711129557EF64078CD5D11C1ECB4682 /* Pods-DKCloudFramework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DKCloudFramework_Example.modulemap"; sourceTree = "<group>"; };
+		1F69915174F331EDF9804B583B6686C8 /* bctoolbox-ios.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = "bctoolbox-ios.xcframework"; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox-ios.xcframework"; sourceTree = "<group>"; };
+		2549E1CB83B33336A4C0EC3DB01E4793 /* DKCloudFramework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DKCloudFramework; path = DKCloudFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		284CEFF3DA11CE541AB69C8EA19450FA /* Pods-DKCloudFramework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DKCloudFramework_Example-frameworks.sh"; sourceTree = "<group>"; };
+		29EB7C1D462079787C62115C3A9148E3 /* belcard.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = belcard.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/belcard.xcframework"; sourceTree = "<group>"; };
+		2A3E99DC0D438EC6D5133F7D0D1DF2A8 /* Pods-DKCloudFramework_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DKCloudFramework_Example-Info.plist"; sourceTree = "<group>"; };
 		2ADF11EDBC70C067CC514801FFC8BBAC /* linphone-sdk-novideo-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "linphone-sdk-novideo-xcframeworks.sh"; sourceTree = "<group>"; };
 		2D222478424DFB154068810DF1251276 /* belle-sip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "belle-sip.framework"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/belle-sip.framework"; sourceTree = DEVELOPER_DIR; };
 		2F134C92D03244EB3CC088AB26C0FC74 /* Transport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transport.swift; path = Sources/Transport/Transport.swift; sourceTree = "<group>"; };
-		3850246BA6A684E3D8783053EB6336FB /* msopenh264.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = msopenh264.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/msopenh264.xcframework"; sourceTree = "<group>"; };
+		336510F6FBC6CA5536B6E43121EF9A82 /* Pods-DKCloudFramework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DKCloudFramework_Example.release.xcconfig"; sourceTree = "<group>"; };
+		34B6231D201BE42217B625697BDE51E0 /* Pods-DKCloudFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DKCloudFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		38D524D0138AECBD55937E406C1555E1 /* HTTPHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHandler.swift; path = Sources/Framer/HTTPHandler.swift; sourceTree = "<group>"; };
 		3BC73EADE5F286BD24DE6DBD4D5FCED1 /* WebSocketManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocketManager.swift; path = DKCloudFramework/Classes/WebSocketManager.swift; sourceTree = "<group>"; };
-		3F629A0503D692D50EF5F0DF2029B3C1 /* Pods-DKCloudFramework_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DKCloudFramework_Tests-Info.plist"; sourceTree = "<group>"; };
+		3D817800E1E8CE6DF1153B8674C41466 /* msopenh264.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = msopenh264.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/msopenh264.xcframework"; sourceTree = "<group>"; };
+		3FED3566E6E464D4725B2B5BDA81C4FC /* bctoolbox-tester.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = "bctoolbox-tester.xcframework"; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox-tester.xcframework"; sourceTree = "<group>"; };
 		41228D0FF25B7BC0BC5F322F35B3C373 /* DKCloudFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DKCloudFramework.release.xcconfig; sourceTree = "<group>"; };
-		4516B095711E523DEBD90C99DE6CBD67 /* Pods-DKCloudFramework_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DKCloudFramework_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		443E69C24A22F6D24F25456B42ECA34B /* Pods-DKCloudFramework_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DKCloudFramework_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		4608E27D641D4CCD8FA9E8304C00A01E /* Pods-DKCloudFramework_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DKCloudFramework_Tests-Info.plist"; sourceTree = "<group>"; };
 		46DC89B78BAA6323CDEA0076231E622A /* DKCloudFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DKCloudFramework-dummy.m"; sourceTree = "<group>"; };
-		4B312369FE78B875FD311FD183515F8F /* Pods-DKCloudFramework_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DKCloudFramework_Tests-umbrella.h"; sourceTree = "<group>"; };
 		543FA73FC5BA75C399B8514AF565F9A3 /* Security.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Security.swift; path = Sources/Security/Security.swift; sourceTree = "<group>"; };
-		58CC5152AEEA88EF60864198EE57EA4F /* bctoolbox.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = bctoolbox.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox.xcframework"; sourceTree = "<group>"; };
+		56236B6C37D1DD6E6783063E66BA4F52 /* linphone.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = linphone.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/linphone.xcframework"; sourceTree = "<group>"; };
+		576115F2B0EB2C24E535446A5C2CDE23 /* Pods-DKCloudFramework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DKCloudFramework_Example.modulemap"; sourceTree = "<group>"; };
+		58A66A0A4B14BAFF27500F1966E8F3F1 /* Pods-DKCloudFramework_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DKCloudFramework_Example-dummy.m"; sourceTree = "<group>"; };
 		59DACBBF325A5D3A37DDE893F61EA617 /* TCPTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TCPTransport.swift; path = Sources/Transport/TCPTransport.swift; sourceTree = "<group>"; };
-		5A05AC74DD10C82DFE2F4DA2CB442CD6 /* Pods-DKCloudFramework_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DKCloudFramework_Example-umbrella.h"; sourceTree = "<group>"; };
-		5B67DCA873DC6903970E5A49C2E7B699 /* DKCloudFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DKCloudFramework.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5B895FFF0876B1EDA475A1EA5E6AA4D2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5B67DCA873DC6903970E5A49C2E7B699 /* DKCloudFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DKCloudFramework.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5B895FFF0876B1EDA475A1EA5E6AA4D2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		5CBA7DDC2BBD8C369B03168B4CCC288B /* DKCloudFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKCloudFramework-prefix.pch"; sourceTree = "<group>"; };
-		5E9E0D759C6EAF14C0A386E1FA12D28F /* bctoolbox-ios.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = "bctoolbox-ios.xcframework"; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox-ios.xcframework"; sourceTree = "<group>"; };
+		5DCBBA1F7CD4B8B4FA63CE79E952869F /* Pods-DKCloudFramework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DKCloudFramework_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		61C4BA7B63487B53F0B43CE61DD2F1A0 /* linphone-sdk-novideo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "linphone-sdk-novideo-dummy.m"; sourceTree = "<group>"; };
 		63B2D5CAA28791DEE9DB56621EEE18AD /* linphone-sdk-novideo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "linphone-sdk-novideo-Info.plist"; sourceTree = "<group>"; };
-		65BB8B1B6CC8C16D71C01A1D2CC9FB3B /* Pods-DKCloudFramework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DKCloudFramework_Example-frameworks.sh"; sourceTree = "<group>"; };
+		64E7C2286E62DA2BACD4E41FE025C9C9 /* ortp.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = ortp.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/ortp.xcframework"; sourceTree = "<group>"; };
+		658E4423FD5C33DB25162034A20837C7 /* mssilk.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = mssilk.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/mssilk.xcframework"; sourceTree = "<group>"; };
 		668BB35576211847196BD5A0729C007F /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Starscream.modulemap; sourceTree = "<group>"; };
-		6829E394BE77CD35C850319CBBACE2E2 /* belcard.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = belcard.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/belcard.xcframework"; sourceTree = "<group>"; };
-		683132A6D7138044FE5850F939484EBF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		68EDA13C111B69A38DD620EEF1813E6A /* linphone.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = linphone.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/linphone.xcframework"; sourceTree = "<group>"; };
-		6978230EE30AB1EFCE04A6A8E452881A /* ZXing.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = ZXing.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/ZXing.xcframework"; sourceTree = "<group>"; };
+		683132A6D7138044FE5850F939484EBF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		6BB86E4B704888915F6CD9FA90893B33 /* DKCloudFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKCloudFramework-umbrella.h"; sourceTree = "<group>"; };
-		6C4557EB37F1B4DB8F591F16B9565AD0 /* mscodec2.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = mscodec2.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/mscodec2.xcframework"; sourceTree = "<group>"; };
-		728A0CBF4D2220F7F166F47BDDDE3F2F /* Pods-DKCloudFramework_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DKCloudFramework_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		72B15EDC4D1CB58765F7447B535B7F89 /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
-		73A06C2B254BBB558E7E945159FD18CB /* Pods-DKCloudFramework_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DKCloudFramework_Example-Info.plist"; sourceTree = "<group>"; };
 		756DFB667F85BD05F5C6B60D3D0C5458 /* linphone-sdk-novideo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "linphone-sdk-novideo-umbrella.h"; sourceTree = "<group>"; };
-		77B2A56687E9B7664E1FA70D29331D68 /* mssilk.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = mssilk.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/mssilk.xcframework"; sourceTree = "<group>"; };
-		787D4B29657B9E1BF138BBCDF5676545 /* Pods-DKCloudFramework_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DKCloudFramework_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7D843045BD9C28E63EA02517EADFF025 /* FoundationTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationTransport.swift; path = Sources/Transport/FoundationTransport.swift; sourceTree = "<group>"; };
 		7EEF52C7119081481F207CF4694FACAB /* Framer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Framer.swift; path = Sources/Framer/Framer.swift; sourceTree = "<group>"; };
 		7FF70ED29280FCB0A9EFADAE7203CE93 /* linphone-sdk-novideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "linphone-sdk-novideo.release.xcconfig"; sourceTree = "<group>"; };
-		826EC738DFE86FDBD672F47606C64A2F /* Pods-DKCloudFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DKCloudFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		838B1DC49B474CDA4924BDC1D93627D5 /* linphonesw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = linphonesw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		821FF20239ED7AFF28F13F73B13B6374 /* belle-sip.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = "belle-sip.xcframework"; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/belle-sip.xcframework"; sourceTree = "<group>"; };
+		822EFCA6B730532B51115F6FE0F60935 /* linphonetester.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = linphonetester.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/linphonetester.xcframework"; sourceTree = "<group>"; };
+		838B1DC49B474CDA4924BDC1D93627D5 /* linphone-sdk-novideo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "linphone-sdk-novideo"; path = linphonesw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84FD0BB942201C0418C1450615F9157B /* Pods-DKCloudFramework_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DKCloudFramework_Tests.modulemap"; sourceTree = "<group>"; };
+		88525D8DCAAB305BE92734E070D41C09 /* msamr.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = msamr.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/msamr.xcframework"; sourceTree = "<group>"; };
+		891B2270823847ED23F2ECFC28F935EC /* Starscream */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6A7731C33FDDF00E0C21DC423D314 /* NativeEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeEngine.swift; path = Sources/Engine/NativeEngine.swift; sourceTree = "<group>"; };
 		89C23D77E912D9552E780AD21FBDF0D3 /* linphone-sdk-novideo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "linphone-sdk-novideo-prefix.pch"; sourceTree = "<group>"; };
-		89EB34E56A7A1F25206D8F3DFB871886 /* Pods-DKCloudFramework_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DKCloudFramework_Example-dummy.m"; sourceTree = "<group>"; };
 		8B20AC8B785560A33F21A24470DCEBE3 /* WSEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WSEngine.swift; path = Sources/Engine/WSEngine.swift; sourceTree = "<group>"; };
-		91D7CFC04792ECF131DAA741227CDB75 /* Pods-DKCloudFramework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DKCloudFramework_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9452B00858DD54071FB04A9B6994865C /* DKCloudKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKCloudKit.swift; path = DKCloudFramework/Classes/DKCloudKit.swift; sourceTree = "<group>"; };
 		9952E439EC2EB46CE8DFA3A921E9E5D5 /* DKCloudFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DKCloudFramework-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AAB3ED278C52FEEC58AA413B5F89014E /* ortp.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = ortp.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/ortp.xcframework"; sourceTree = "<group>"; };
+		9B20F68B4E6C4498B7A1027543A7E098 /* lime.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = lime.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/lime.xcframework"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A179C11B228394529D6DDF46CB0E413A /* Pods-DKCloudFramework_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DKCloudFramework_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A8CECCBF14545EFF6F0429962C42FCB7 /* Pods-DKCloudFramework_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DKCloudFramework_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		ABDEE0E9EB9D2E4DCDFA2E784CF26D13 /* Starscream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-umbrella.h"; sourceTree = "<group>"; };
 		AD3DEEA1723585F7BA5A7C393C91596F /* DKCloudFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DKCloudFramework.modulemap; sourceTree = "<group>"; };
-		B2FF645F0EBEFD7A904446AB41832B03 /* linphonetester.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = linphonetester.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/linphonetester.xcframework"; sourceTree = "<group>"; };
 		B5B56E4172D5DA16A43E6F85F2D0CDB8 /* Data+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Extensions.swift"; path = "Sources/DataBytes/Data+Extensions.swift"; sourceTree = "<group>"; };
+		B73DF3769286EA5F4ED5E3C79DD59712 /* Pods-DKCloudFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DKCloudFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B87548CCE446AE3EFE02654D5104F88B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B9D1E22FD32F3E3B0C407CB6DF9885E7 /* Server.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Server.swift; path = Sources/Server/Server.swift; sourceTree = "<group>"; };
+		BB1E39A9607607880735509EA27C83D5 /* bctoolbox.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = bctoolbox.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox.xcframework"; sourceTree = "<group>"; };
 		BC1581B75947F47C64AF218D3FC25609 /* WSCompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WSCompression.swift; path = Sources/Compression/WSCompression.swift; sourceTree = "<group>"; };
 		BDB76B9BD5BF875BA10B5ADC3BDFC767 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = DKCloudFramework/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		BDF59DBF38D80F0F0BD2661A3204D0CF /* WebSocketServer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocketServer.swift; path = Sources/Server/WebSocketServer.swift; sourceTree = "<group>"; };
-		BEC87C224D9D211B7869C00B83FB3774 /* belr.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = belr.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/belr.xcframework"; sourceTree = "<group>"; };
-		C368A43E63C72D6CCBB434C668709FAF /* Pods-DKCloudFramework_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DKCloudFramework_Tests-dummy.m"; sourceTree = "<group>"; };
-		C8F0398476D5882527D6A26CA0B9DEC1 /* msamr.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = msamr.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/msamr.xcframework"; sourceTree = "<group>"; };
-		CD13084B245A3125CFB8FC9BB3E114F7 /* Pods_DKCloudFramework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DKCloudFramework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C17297D063CD513250B61D7991F57EB0 /* Pods-DKCloudFramework_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DKCloudFramework_Tests-umbrella.h"; sourceTree = "<group>"; };
+		CA7933BA7D3547F5FE22ED685A05477D /* mswebrtc.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = mswebrtc.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/mswebrtc.xcframework"; sourceTree = "<group>"; };
+		CD13084B245A3125CFB8FC9BB3E114F7 /* Pods-DKCloudFramework_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DKCloudFramework_Tests"; path = Pods_DKCloudFramework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDECEEE3542C06F1AEDDE1A2B45C777B /* Starscream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.release.xcconfig; sourceTree = "<group>"; };
 		CFE769DCE384A27DF7A00EC6CCD55361 /* DKCloudFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DKCloudFramework.debug.xcconfig; sourceTree = "<group>"; };
 		D1FE784FBEA3C55E47A0692B83D2FD67 /* FrameCollector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrameCollector.swift; path = Sources/Framer/FrameCollector.swift; sourceTree = "<group>"; };
 		D435ABD8457863757F5E2F2672CF38EC /* TransformUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformUtils.swift; path = DKCloudFramework/Classes/TransformUtils.swift; sourceTree = "<group>"; };
-		D4505A03A8BCACE15CFC6912B8C3B3A4 /* Pods-DKCloudFramework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DKCloudFramework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D999E57592CCA404B3B701CE128246B9 /* Pods_DKCloudFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DKCloudFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5AA48DED30C4D03419112FA381CEC49 /* Pods-DKCloudFramework_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DKCloudFramework_Tests-dummy.m"; sourceTree = "<group>"; };
+		D999E57592CCA404B3B701CE128246B9 /* Pods-DKCloudFramework_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DKCloudFramework_Example"; path = Pods_DKCloudFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA85F12DE01C85864B416A60469F48EC /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
 		DBB3DFD64D7BEFB48F7B457256ADEBE8 /* linphone-sdk-novideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "linphone-sdk-novideo.debug.xcconfig"; sourceTree = "<group>"; };
 		DBE39DE8FEA62FC5929A68399305DE68 /* Starscream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.debug.xcconfig; sourceTree = "<group>"; };
 		E13E8FB32FE2873FD981756504D1838C /* linphone-sdk-novideo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "linphone-sdk-novideo.modulemap"; sourceTree = "<group>"; };
-		E2C9730D1242A1BFE401AC481336CD66 /* Pods-DKCloudFramework_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DKCloudFramework_Tests.modulemap"; sourceTree = "<group>"; };
 		E651791F0E90457CF7B8FFED1852F4EE /* FoundationSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationSecurity.swift; path = Sources/Security/FoundationSecurity.swift; sourceTree = "<group>"; };
-		E6E9C0963616BFAFCA0586E7D67A338A /* Pods-DKCloudFramework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DKCloudFramework_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		EB01E0ABF39061E9777D26248B73504C /* mswebrtc.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = mswebrtc.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/mswebrtc.xcframework"; sourceTree = "<group>"; };
 		EC0AB00704F4BE972DA514144B17A5CE /* StringHTTPHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringHTTPHandler.swift; path = Sources/Framer/StringHTTPHandler.swift; sourceTree = "<group>"; };
-		ECAD3D0618B0A66434D05CEDB7377FCF /* mediastreamer2.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = mediastreamer2.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/mediastreamer2.xcframework"; sourceTree = "<group>"; };
 		F1C680E169C38A27DF37E748EFAAA54A /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Sources/Starscream/WebSocket.swift; sourceTree = "<group>"; };
+		F3D60DF14FC63EAD85C91AD4668F69DF /* Pods-DKCloudFramework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DKCloudFramework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F439216F628792E23224F6B76A6FD9DE /* Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Sources/Compression/Compression.swift; sourceTree = "<group>"; };
+		F70EA05CE3A78B80A67F543BA1B38348 /* mediastreamer2.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = mediastreamer2.xcframework; path = "linphone-sdk-novideo/apple-darwin/XCFrameworks/mediastreamer2.xcframework"; sourceTree = "<group>"; };
 		F83BAD0586300C598A58811E60749E35 /* Starscream-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Starscream-Info.plist"; sourceTree = "<group>"; };
 		F9E21A69C8EB882F4028FF8E60D7D6AE /* bctoolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = bctoolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/bctoolbox.framework; sourceTree = DEVELOPER_DIR; };
 		FB91EA6EA6FA71A1DFB7AA3551446C48 /* FoundationHTTPHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationHTTPHandler.swift; path = Sources/Framer/FoundationHTTPHandler.swift; sourceTree = "<group>"; };
+		FBEEC86A0ECEED2FC343A44BA4C6AE92 /* Pods-DKCloudFramework_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DKCloudFramework_Example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,19 +213,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		248F94E9BD9CEEA83FB46F8DBFB4F0A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08BA695368A29E6991FE459E61F64D1A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D71ADF41D9F105F938401B45AA0D26D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				24033B52D690191E8A0D648CCAAFB56C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C8020F63FA2990D659A4A8F26536DD15 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				925731944BED26CF9D0D98E3750C7795 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,23 +266,6 @@
 			path = "Example/Pods/Target Support Files/DKCloudFramework";
 			sourceTree = "<group>";
 		};
-		28239E9A1EF11643CD9985CB876D7DBC /* Pods-DKCloudFramework_Example */ = {
-			isa = PBXGroup;
-			children = (
-				2711129557EF64078CD5D11C1ECB4682 /* Pods-DKCloudFramework_Example.modulemap */,
-				0076168325C6CBD1F0479268D0DC9217 /* Pods-DKCloudFramework_Example-acknowledgements.markdown */,
-				728A0CBF4D2220F7F166F47BDDDE3F2F /* Pods-DKCloudFramework_Example-acknowledgements.plist */,
-				89EB34E56A7A1F25206D8F3DFB871886 /* Pods-DKCloudFramework_Example-dummy.m */,
-				65BB8B1B6CC8C16D71C01A1D2CC9FB3B /* Pods-DKCloudFramework_Example-frameworks.sh */,
-				73A06C2B254BBB558E7E945159FD18CB /* Pods-DKCloudFramework_Example-Info.plist */,
-				5A05AC74DD10C82DFE2F4DA2CB442CD6 /* Pods-DKCloudFramework_Example-umbrella.h */,
-				E6E9C0963616BFAFCA0586E7D67A338A /* Pods-DKCloudFramework_Example.debug.xcconfig */,
-				91D7CFC04792ECF131DAA741227CDB75 /* Pods-DKCloudFramework_Example.release.xcconfig */,
-			);
-			name = "Pods-DKCloudFramework_Example";
-			path = "Target Support Files/Pods-DKCloudFramework_Example";
-			sourceTree = "<group>";
-		};
 		3769E03561D9592D6D276ED45E77E4C4 /* DKCloudFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,27 +304,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4E697B56426EB2042DC76F840029FBB4 /* Frameworks */ = {
+		56A1F0C89DAA19894F66995D26647557 /* Pods-DKCloudFramework_Example */ = {
 			isa = PBXGroup;
 			children = (
-				58CC5152AEEA88EF60864198EE57EA4F /* bctoolbox.xcframework */,
-				5E9E0D759C6EAF14C0A386E1FA12D28F /* bctoolbox-ios.xcframework */,
-				6829E394BE77CD35C850319CBBACE2E2 /* belcard.xcframework */,
-				1F59A294FD83B0AEBC508B4016EEB86F /* belle-sip.xcframework */,
-				BEC87C224D9D211B7869C00B83FB3774 /* belr.xcframework */,
-				0926134D797E58FFCB9FAA2D76B5822C /* lime.xcframework */,
-				68EDA13C111B69A38DD620EEF1813E6A /* linphone.xcframework */,
-				B2FF645F0EBEFD7A904446AB41832B03 /* linphonetester.xcframework */,
-				ECAD3D0618B0A66434D05CEDB7377FCF /* mediastreamer2.xcframework */,
-				C8F0398476D5882527D6A26CA0B9DEC1 /* msamr.xcframework */,
-				6C4557EB37F1B4DB8F591F16B9565AD0 /* mscodec2.xcframework */,
-				3850246BA6A684E3D8783053EB6336FB /* msopenh264.xcframework */,
-				77B2A56687E9B7664E1FA70D29331D68 /* mssilk.xcframework */,
-				EB01E0ABF39061E9777D26248B73504C /* mswebrtc.xcframework */,
-				AAB3ED278C52FEEC58AA413B5F89014E /* ortp.xcframework */,
-				6978230EE30AB1EFCE04A6A8E452881A /* ZXing.xcframework */,
+				576115F2B0EB2C24E535446A5C2CDE23 /* Pods-DKCloudFramework_Example.modulemap */,
+				B73DF3769286EA5F4ED5E3C79DD59712 /* Pods-DKCloudFramework_Example-acknowledgements.markdown */,
+				443E69C24A22F6D24F25456B42ECA34B /* Pods-DKCloudFramework_Example-acknowledgements.plist */,
+				58A66A0A4B14BAFF27500F1966E8F3F1 /* Pods-DKCloudFramework_Example-dummy.m */,
+				284CEFF3DA11CE541AB69C8EA19450FA /* Pods-DKCloudFramework_Example-frameworks.sh */,
+				2A3E99DC0D438EC6D5133F7D0D1DF2A8 /* Pods-DKCloudFramework_Example-Info.plist */,
+				FBEEC86A0ECEED2FC343A44BA4C6AE92 /* Pods-DKCloudFramework_Example-umbrella.h */,
+				5DCBBA1F7CD4B8B4FA63CE79E952869F /* Pods-DKCloudFramework_Example.debug.xcconfig */,
+				336510F6FBC6CA5536B6E43121EF9A82 /* Pods-DKCloudFramework_Example.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Pods-DKCloudFramework_Example";
+			path = "Target Support Files/Pods-DKCloudFramework_Example";
 			sourceTree = "<group>";
 		};
 		5761E11454D056340C341585F1D9C48E /* Pod */ = {
@@ -367,6 +329,15 @@
 				5B895FFF0876B1EDA475A1EA5E6AA4D2 /* README.md */,
 			);
 			name = Pod;
+			sourceTree = "<group>";
+		};
+		61FC7812CEC3379961873C91DBEED25B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				56A1F0C89DAA19894F66995D26647557 /* Pods-DKCloudFramework_Example */,
+				EACE193DE538FE4F9A3458C6776D17A3 /* Pods-DKCloudFramework_Tests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		6FBBF0CC03C45454E479BB2DD683C61C /* Development Pods */ = {
@@ -381,9 +352,10 @@
 			isa = PBXGroup;
 			children = (
 				11E6C6D70F2432F1BA832CEE926F4911 /* LinphoneWrapper.swift */,
-				4E697B56426EB2042DC76F840029FBB4 /* Frameworks */,
+				ABA612FFC4E26945ECE37F475035B96A /* Frameworks */,
 				BBCE99FD459A16F76ADD5492671DDAD2 /* Support Files */,
 			);
+			name = "linphone-sdk-novideo";
 			path = "linphone-sdk-novideo";
 			sourceTree = "<group>";
 		};
@@ -412,33 +384,31 @@
 				8B20AC8B785560A33F21A24470DCEBE3 /* WSEngine.swift */,
 				3B160E5B07CDF2A23D0500E7DE0866BD /* Support Files */,
 			);
+			name = Starscream;
 			path = Starscream;
 			sourceTree = "<group>";
 		};
-		AA63FB9392F7F15F3CBE0C995EBC2944 /* Pods-DKCloudFramework_Tests */ = {
+		ABA612FFC4E26945ECE37F475035B96A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2C9730D1242A1BFE401AC481336CD66 /* Pods-DKCloudFramework_Tests.modulemap */,
-				16496226978B537073CB72E902C22DCC /* Pods-DKCloudFramework_Tests-acknowledgements.markdown */,
-				787D4B29657B9E1BF138BBCDF5676545 /* Pods-DKCloudFramework_Tests-acknowledgements.plist */,
-				C368A43E63C72D6CCBB434C668709FAF /* Pods-DKCloudFramework_Tests-dummy.m */,
-				4516B095711E523DEBD90C99DE6CBD67 /* Pods-DKCloudFramework_Tests-frameworks.sh */,
-				3F629A0503D692D50EF5F0DF2029B3C1 /* Pods-DKCloudFramework_Tests-Info.plist */,
-				4B312369FE78B875FD311FD183515F8F /* Pods-DKCloudFramework_Tests-umbrella.h */,
-				D4505A03A8BCACE15CFC6912B8C3B3A4 /* Pods-DKCloudFramework_Tests.debug.xcconfig */,
-				826EC738DFE86FDBD672F47606C64A2F /* Pods-DKCloudFramework_Tests.release.xcconfig */,
+				BB1E39A9607607880735509EA27C83D5 /* bctoolbox.xcframework */,
+				1F69915174F331EDF9804B583B6686C8 /* bctoolbox-ios.xcframework */,
+				3FED3566E6E464D4725B2B5BDA81C4FC /* bctoolbox-tester.xcframework */,
+				29EB7C1D462079787C62115C3A9148E3 /* belcard.xcframework */,
+				821FF20239ED7AFF28F13F73B13B6374 /* belle-sip.xcframework */,
+				04BAC521CD42F00C524559E8AACE2861 /* belr.xcframework */,
+				9B20F68B4E6C4498B7A1027543A7E098 /* lime.xcframework */,
+				56236B6C37D1DD6E6783063E66BA4F52 /* linphone.xcframework */,
+				822EFCA6B730532B51115F6FE0F60935 /* linphonetester.xcframework */,
+				F70EA05CE3A78B80A67F543BA1B38348 /* mediastreamer2.xcframework */,
+				88525D8DCAAB305BE92734E070D41C09 /* msamr.xcframework */,
+				05E99A3CBAE57C225B43B9A100C15ED5 /* mscodec2.xcframework */,
+				3D817800E1E8CE6DF1153B8674C41466 /* msopenh264.xcframework */,
+				658E4423FD5C33DB25162034A20837C7 /* mssilk.xcframework */,
+				CA7933BA7D3547F5FE22ED685A05477D /* mswebrtc.xcframework */,
+				64E7C2286E62DA2BACD4E41FE025C9C9 /* ortp.xcframework */,
 			);
-			name = "Pods-DKCloudFramework_Tests";
-			path = "Target Support Files/Pods-DKCloudFramework_Tests";
-			sourceTree = "<group>";
-		};
-		B15E562C10FBD62EBB6E5E8FFBF90F6A /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				28239E9A1EF11643CD9985CB876D7DBC /* Pods-DKCloudFramework_Example */,
-				AA63FB9392F7F15F3CBE0C995EBC2944 /* Pods-DKCloudFramework_Tests */,
-			);
-			name = "Targets Support Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
@@ -468,11 +438,11 @@
 		CD008D322388C84CCB385CB95BA9DE71 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2549E1CB83B33336A4C0EC3DB01E4793 /* DKCloudFramework.framework */,
-				838B1DC49B474CDA4924BDC1D93627D5 /* linphonesw.framework */,
-				D999E57592CCA404B3B701CE128246B9 /* Pods_DKCloudFramework_Example.framework */,
-				CD13084B245A3125CFB8FC9BB3E114F7 /* Pods_DKCloudFramework_Tests.framework */,
-				891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */,
+				2549E1CB83B33336A4C0EC3DB01E4793 /* DKCloudFramework */,
+				838B1DC49B474CDA4924BDC1D93627D5 /* linphone-sdk-novideo */,
+				D999E57592CCA404B3B701CE128246B9 /* Pods-DKCloudFramework_Example */,
+				CD13084B245A3125CFB8FC9BB3E114F7 /* Pods-DKCloudFramework_Tests */,
+				891B2270823847ED23F2ECFC28F935EC /* Starscream */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -485,8 +455,24 @@
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				4D87BD21931A52F4FCAD3AB75C92230F /* Pods */,
 				CD008D322388C84CCB385CB95BA9DE71 /* Products */,
-				B15E562C10FBD62EBB6E5E8FFBF90F6A /* Targets Support Files */,
+				61FC7812CEC3379961873C91DBEED25B /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		EACE193DE538FE4F9A3458C6776D17A3 /* Pods-DKCloudFramework_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				84FD0BB942201C0418C1450615F9157B /* Pods-DKCloudFramework_Tests.modulemap */,
+				A8CECCBF14545EFF6F0429962C42FCB7 /* Pods-DKCloudFramework_Tests-acknowledgements.markdown */,
+				A179C11B228394529D6DDF46CB0E413A /* Pods-DKCloudFramework_Tests-acknowledgements.plist */,
+				D5AA48DED30C4D03419112FA381CEC49 /* Pods-DKCloudFramework_Tests-dummy.m */,
+				4608E27D641D4CCD8FA9E8304C00A01E /* Pods-DKCloudFramework_Tests-Info.plist */,
+				C17297D063CD513250B61D7991F57EB0 /* Pods-DKCloudFramework_Tests-umbrella.h */,
+				F3D60DF14FC63EAD85C91AD4668F69DF /* Pods-DKCloudFramework_Tests.debug.xcconfig */,
+				34B6231D201BE42217B625697BDE51E0 /* Pods-DKCloudFramework_Tests.release.xcconfig */,
+			);
+			name = "Pods-DKCloudFramework_Tests";
+			path = "Target Support Files/Pods-DKCloudFramework_Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,19 +494,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79F90E6A3503066824EA043FCCF8F017 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0689428EBA7E5F07C4DF6BF16CBF071E /* Pods-DKCloudFramework_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AF1FDDB14397C1D15DAB471F67405598 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				84E6C03908D326294951ADF8300E5CCA /* linphone-sdk-novideo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA6F3634E354DAB5BAD88D0D58E65920 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59D5A6BE1AA6F4ABE5F2D8806ED1D44 /* Pods-DKCloudFramework_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,23 +523,21 @@
 /* Begin PBXNativeTarget section */
 		37D5B1CAA1ABE47AF3447F83496A4E77 /* Pods-DKCloudFramework_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7B21E8683C552C04F771806FC6891442 /* Build configuration list for PBXNativeTarget "Pods-DKCloudFramework_Tests" */;
+			buildConfigurationList = 75008D341E4E068E92E0C11F18DD81CF /* Build configuration list for PBXNativeTarget "Pods-DKCloudFramework_Tests" */;
 			buildPhases = (
-				79F90E6A3503066824EA043FCCF8F017 /* Headers */,
-				2F8F6BC7C69C7F131CE1959F1BF9900F /* Sources */,
-				C8020F63FA2990D659A4A8F26536DD15 /* Frameworks */,
-				23BE08273CC66D641949A234D700151E /* Resources */,
+				EA6F3634E354DAB5BAD88D0D58E65920 /* Headers */,
+				6B22948894C8276A7875B7E6845DAF64 /* Sources */,
+				248F94E9BD9CEEA83FB46F8DBFB4F0A9 /* Frameworks */,
+				E579FADDB0B7F0F775D9294F6FF2734B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1E30FA3BFB6F493766A19273E5B9CADD /* PBXTargetDependency */,
-				BBFF2D738B43E23ED321E545AA825CC6 /* PBXTargetDependency */,
-				1D4F5DB4B7648AF9220AD31F085C95B8 /* PBXTargetDependency */,
+				3057D440BDA7FD3375F0B8AA44934DCE /* PBXTargetDependency */,
 			);
 			name = "Pods-DKCloudFramework_Tests";
 			productName = Pods_DKCloudFramework_Tests;
-			productReference = CD13084B245A3125CFB8FC9BB3E114F7 /* Pods_DKCloudFramework_Tests.framework */;
+			productReference = CD13084B245A3125CFB8FC9BB3E114F7 /* Pods-DKCloudFramework_Tests */;
 			productType = "com.apple.product-type.framework";
 		};
 		9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */ = {
@@ -571,7 +555,7 @@
 			);
 			name = Starscream;
 			productName = Starscream;
-			productReference = 891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */;
+			productReference = 891B2270823847ED23F2ECFC28F935EC /* Starscream */;
 			productType = "com.apple.product-type.framework";
 		};
 		A13DB727FF5B2DA6162BDC8F892CAD4A /* DKCloudFramework */ = {
@@ -591,7 +575,7 @@
 			);
 			name = DKCloudFramework;
 			productName = DKCloudFramework;
-			productReference = 2549E1CB83B33336A4C0EC3DB01E4793 /* DKCloudFramework.framework */;
+			productReference = 2549E1CB83B33336A4C0EC3DB01E4793 /* DKCloudFramework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A59B2CBBECE489C0CC7F4D55811E3DE2 /* linphone-sdk-novideo */ = {
@@ -599,7 +583,7 @@
 			buildConfigurationList = FEF28031A23C935BFDA0BD8B5A139A20 /* Build configuration list for PBXNativeTarget "linphone-sdk-novideo" */;
 			buildPhases = (
 				AF1FDDB14397C1D15DAB471F67405598 /* Headers */,
-				6B8C0C6DD954F602783CA74C42C8E15C /* [CP] Copy XCFrameworks */,
+				AA15ECE96641DD246C692E85C5A54FBC /* [CP] Copy XCFrameworks */,
 				466464428A5909FAF9A6275E580E2C0F /* Sources */,
 				20547DD735BFF4878DE6779D54253D0D /* Frameworks */,
 				D889E8505573DA198FEBACE3E023DFC2 /* Resources */,
@@ -610,7 +594,7 @@
 			);
 			name = "linphone-sdk-novideo";
 			productName = linphonesw;
-			productReference = 838B1DC49B474CDA4924BDC1D93627D5 /* linphonesw.framework */;
+			productReference = 838B1DC49B474CDA4924BDC1D93627D5 /* linphone-sdk-novideo */;
 			productType = "com.apple.product-type.framework";
 		};
 		EC887C85F0713E0517C255E518A24829 /* Pods-DKCloudFramework_Example */ = {
@@ -631,7 +615,7 @@
 			);
 			name = "Pods-DKCloudFramework_Example";
 			productName = Pods_DKCloudFramework_Example;
-			productReference = D999E57592CCA404B3B701CE128246B9 /* Pods_DKCloudFramework_Example.framework */;
+			productReference = D999E57592CCA404B3B701CE128246B9 /* Pods-DKCloudFramework_Example */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -666,13 +650,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		23BE08273CC66D641949A234D700151E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8CCA9DB95FDDB48E70B53019C721A50B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -701,10 +678,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E579FADDB0B7F0F775D9294F6FF2734B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6B8C0C6DD954F602783CA74C42C8E15C /* [CP] Copy XCFrameworks */ = {
+		AA15ECE96641DD246C692E85C5A54FBC /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -712,6 +696,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/linphone-sdk-novideo/linphone-sdk-novideo-xcframeworks.sh",
 				"${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox-ios.xcframework",
+				"${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox-tester.xcframework",
 				"${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/bctoolbox.xcframework",
 				"${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/belcard.xcframework",
 				"${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/belle-sip.xcframework",
@@ -726,11 +711,11 @@
 				"${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/mssilk.xcframework",
 				"${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/mswebrtc.xcframework",
 				"${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/ortp.xcframework",
-				"${PODS_ROOT}/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/ZXing.xcframework",
 			);
 			name = "[CP] Copy XCFrameworks";
 			outputPaths = (
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-ios.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-tester.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belcard.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belle-sip.framework",
@@ -745,7 +730,6 @@
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mssilk.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mswebrtc.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ortp.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ZXing.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -755,14 +739,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2F8F6BC7C69C7F131CE1959F1BF9900F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A85451D0D09DCF8C48965893FD1C453 /* Pods-DKCloudFramework_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		466464428A5909FAF9A6275E580E2C0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -781,6 +757,14 @@
 				DFA413B727156E0662D7CBC9BED48D02 /* ReplaceMe.swift in Sources */,
 				37A3A01F6BFD31008CB32BDB7C354F0A /* TransformUtils.swift in Sources */,
 				125E5AD8CD657CA106DBC4785C6CAC3B /* WebSocketManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B22948894C8276A7875B7E6845DAF64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0720A5A636AC2788923E3F0E6BE0457 /* Pods-DKCloudFramework_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,17 +807,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1D4F5DB4B7648AF9220AD31F085C95B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "linphone-sdk-novideo";
-			target = A59B2CBBECE489C0CC7F4D55811E3DE2 /* linphone-sdk-novideo */;
-			targetProxy = 90B7EBD40B4A7C153EFDCD647C0FB186 /* PBXContainerItemProxy */;
-		};
-		1E30FA3BFB6F493766A19273E5B9CADD /* PBXTargetDependency */ = {
+		3057D440BDA7FD3375F0B8AA44934DCE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-DKCloudFramework_Example";
 			target = EC887C85F0713E0517C255E518A24829 /* Pods-DKCloudFramework_Example */;
-			targetProxy = EE5EE9C4C8590D7DCC4D333D306940FC /* PBXContainerItemProxy */;
+			targetProxy = 706C3BC4F820B5F283A89D8EDA6DFA81 /* PBXContainerItemProxy */;
 		};
 		3C4C288DB189676FA93FB21CEF0B41D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -852,12 +830,6 @@
 			name = DKCloudFramework;
 			target = A13DB727FF5B2DA6162BDC8F892CAD4A /* DKCloudFramework */;
 			targetProxy = A55D1E683F871D85D665AEAAE056A1C3 /* PBXContainerItemProxy */;
-		};
-		BBFF2D738B43E23ED321E545AA825CC6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Starscream;
-			target = 9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */;
-			targetProxy = 5C339FD325278C17D8E7692189485004 /* PBXContainerItemProxy */;
 		};
 		C61F450EF5F1B5302F83FDE25FE2F28C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -878,7 +850,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDECEEE3542C06F1AEDDE1A2B45C777B /* Starscream.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -908,10 +880,10 @@
 		};
 		07997FF8D629270DAA93183C0F05A281 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6E9C0963616BFAFCA0586E7D67A338A /* Pods-DKCloudFramework_Example.debug.xcconfig */;
+			baseConfigurationReference = 5DCBBA1F7CD4B8B4FA63CE79E952869F /* Pods-DKCloudFramework_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -944,7 +916,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CFE769DCE384A27DF7A00EC6CCD55361 /* DKCloudFramework.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -971,41 +943,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		17169DDB22B7821BFD5735731B20AE55 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 826EC738DFE86FDBD672F47606C64A2F /* Pods-DKCloudFramework_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-DKCloudFramework_Tests/Pods-DKCloudFramework_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DKCloudFramework_Tests/Pods-DKCloudFramework_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1075,10 +1012,10 @@
 		};
 		36501FF955284740B30505476D0504DC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91D7CFC04792ECF131DAA741227CDB75 /* Pods-DKCloudFramework_Example.release.xcconfig */;
+			baseConfigurationReference = 336510F6FBC6CA5536B6E43121EF9A82 /* Pods-DKCloudFramework_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1108,11 +1045,12 @@
 			};
 			name = Release;
 		};
-		462D1D32526EA2E7460EA6E289BDF8AC /* Release */ = {
+		3BD9B609EFD94CB6A7CB8E4BE2E023A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7FF70ED29280FCB0A9EFADAE7203CE93 /* linphone-sdk-novideo.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1121,7 +1059,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EXCLUDED_ARCHS = i386;
 				GCC_PREFIX_HEADER = "Target Support Files/linphone-sdk-novideo/linphone-sdk-novideo-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/linphone-sdk-novideo/linphone-sdk-novideo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1145,7 +1082,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 41228D0FF25B7BC0BC5F322F35B3C373 /* DKCloudFramework.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1178,7 +1115,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBE39DE8FEA62FC5929A68399305DE68 /* Starscream.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1260,18 +1197,19 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		7E48DFBBAA14E8C7ED7ECDD254F1B254 /* Debug */ = {
+		C5E77C787BE06D11663FDD3B59638512 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4505A03A8BCACE15CFC6912B8C3B3A4 /* Pods-DKCloudFramework_Tests.debug.xcconfig */;
+			baseConfigurationReference = F3D60DF14FC63EAD85C91AD4668F69DF /* Pods-DKCloudFramework_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1300,11 +1238,12 @@
 			};
 			name = Debug;
 		};
-		BFB432038025223CA8EC609F81280939 /* Debug */ = {
+		E8EF1C374F3DB3ED5FFF7ABE2A80951B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBB3DFD64D7BEFB48F7B457256ADEBE8 /* linphone-sdk-novideo.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1313,7 +1252,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EXCLUDED_ARCHS = i386;
 				GCC_PREFIX_HEADER = "Target Support Files/linphone-sdk-novideo/linphone-sdk-novideo-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/linphone-sdk-novideo/linphone-sdk-novideo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1331,6 +1269,41 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		F78B58284895C5094A66505E4C279132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34B6231D201BE42217B625697BDE51E0 /* Pods-DKCloudFramework_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DKCloudFramework_Tests/Pods-DKCloudFramework_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DKCloudFramework_Tests/Pods-DKCloudFramework_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1353,11 +1326,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7B21E8683C552C04F771806FC6891442 /* Build configuration list for PBXNativeTarget "Pods-DKCloudFramework_Tests" */ = {
+		75008D341E4E068E92E0C11F18DD81CF /* Build configuration list for PBXNativeTarget "Pods-DKCloudFramework_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7E48DFBBAA14E8C7ED7ECDD254F1B254 /* Debug */,
-				17169DDB22B7821BFD5735731B20AE55 /* Release */,
+				C5E77C787BE06D11663FDD3B59638512 /* Debug */,
+				F78B58284895C5094A66505E4C279132 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1383,8 +1356,8 @@
 		FEF28031A23C935BFDA0BD8B5A139A20 /* Build configuration list for PBXNativeTarget "linphone-sdk-novideo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFB432038025223CA8EC609F81280939 /* Debug */,
-				462D1D32526EA2E7460EA6E289BDF8AC /* Release */,
+				E8EF1C374F3DB3ED5FFF7ABE2A80951B /* Debug */,
+				3BD9B609EFD94CB6A7CB8E4BE2E023A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
