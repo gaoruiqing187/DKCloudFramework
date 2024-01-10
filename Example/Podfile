@@ -1,6 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://gitlab.linphone.org/BC/public/podspec.git'
-source 'git@github.com:daltoniam/Starscream.git'
 
 use_frameworks!
 

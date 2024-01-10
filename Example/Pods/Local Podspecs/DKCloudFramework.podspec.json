@@ -1,6 +1,6 @@
 {
   "name": "DKCloudFramework",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "summary": "A short description of DKCloudFramework.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoruiqing187/DKCloudFramework",
@@ -12,8 +12,8 @@
     "gaoruiqing187": "494063010@qq.com"
   },
   "source": {
-    "git": "https://github.com/gaoruiqing187/DKCloudFramework.git",
-    "tag": "1.0.0"
+    "git": "git@github.com:gaoruiqing187/DKCloudFramework.git",
+    "tag": "1.0.3"
   },
   "platforms": {
     "ios": "10.0"
@@ -22,6 +22,7 @@
   "pod_target_xcconfig": {
     "VALID_ARCHS": "arm64 x86_64"
   },
+  "vendored_frameworks": "framework/DKCloudFramework.framework",
   "dependencies": {
     "Starscream": [
 

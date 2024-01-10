@@ -1,0 +1,48 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DKCloudFramework
+@_exported import DKCloudFramework
+import Foundation
+import Starscream
+import Swift
+import SwiftUI
+import _Concurrency
+import linphonesw
+public protocol DKCloudKitDelegate {
+  func registrationSuccessful()
+  func registrationFailedWithError(_ error: Swift.String)
+}
+public enum CallStatus {
+  case dialing
+  case incomingCall
+  case ringing
+  case connected
+  case ended
+  case pause
+  case error
+  public static func == (a: DKCloudFramework.CallStatus, b: DKCloudFramework.CallStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class DKCloudKit {
+  public class var manager: DKCloudFramework.DKCloudKit {
+    get
+  }
+  public func loginAccount(url: Swift.String, projectId: Swift.String, password: Swift.String, agentId: Swift.String, extensionId: Swift.String, token: Swift.String, handler: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  public func callOut(phoneNum: Swift.String, telx: Swift.String, userfueld: Swift.String, numberGroupId: Swift.String, handler: ((DKCloudFramework.CallStatus, Swift.String?) -> Swift.Void)?)
+  public func answer(handler: ((DKCloudFramework.CallStatus, Swift.String) -> Swift.Void)?)
+  public func hangUp()
+  public func pauseOrResume()
+  public func changeOver(callNum: Swift.String, mode: Swift.Int = 0)
+  public func changeOverHangUp()
+  public func logOut()
+  public func changeAgentStatus(reason: Swift.String?, handler: ((Swift.Bool, Swift.Int, Swift.String?) -> Swift.Void)?)
+  public func websocketDidConnect()
+  public func websocketDidDisconnect(error: Swift.String)
+  public func websocketDidReceiveMessage(message: Swift.String)
+  @objc deinit
+}
+extension DKCloudFramework.CallStatus : Swift.Equatable {}
+extension DKCloudFramework.CallStatus : Swift.Hashable {}

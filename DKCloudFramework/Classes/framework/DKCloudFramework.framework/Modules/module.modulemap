@@ -1,0 +1,11 @@
+framework module DKCloudFramework {
+  umbrella header "DKCloudFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module DKCloudFramework.Swift {
+    header "DKCloudFramework-Swift.h"
+    requires objc
+}

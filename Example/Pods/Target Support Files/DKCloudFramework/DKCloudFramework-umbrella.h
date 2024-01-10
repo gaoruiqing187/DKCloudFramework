@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "DKCloudFramework-Swift.h"
+#import "DKCloudFramework.h"
 
 FOUNDATION_EXPORT double DKCloudFrameworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char DKCloudFrameworkVersionString[];

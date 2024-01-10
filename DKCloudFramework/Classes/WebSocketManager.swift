@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Starscream
 
 public protocol DKWebSocketDelegate{
     /**websocket 连接成功*/
@@ -64,7 +65,7 @@ public class WebSocketManager :  WebSocketDelegate{
         case .connected(_):
             isConnected = true
             delegate?.websocketDidConnect()
-//            startHeartbeatTimer()
+            startHeartbeatTimer()
         case .disconnected(let string, _):
             isConnected = false
             delegate?.websocketDidDisconnect(error: string)

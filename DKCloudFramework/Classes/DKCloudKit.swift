@@ -20,17 +20,17 @@ struct DKAccount : Codable{
     var agentState : Int = 0
     var phoneNum : String = ""
     var linkedId : String = ""
-    var telx : String = ""
-    var userfield: String = ""
-    var numberGroupId : String = ""
-    var reason : String = ""
+    var telx : String?
+    var userfield: String?
+    var numberGroupId : String?
+    var reason : String?
     
     mutating func clearCallInfo() {
         linkedId = ""
         phoneNum = ""
-        telx = ""
-        userfield = ""
-        numberGroupId = ""
+        telx = nil
+        userfield = nil
+        numberGroupId = nil
     }
 }
 
@@ -60,11 +60,11 @@ struct SocketInfo : Codable {
     var language: String?
     var privilege: String?
     var exten: String?
-    var channelState: String?
+    var channelState: Int?
     var duration: String?
     var callerIdNum: String?
     var systemName: String?
-    var dateReceived: String?
+    var dateReceived: Double?
     var context: String?
     var callerRole: String?
     var bothbillsec: String?
@@ -72,12 +72,16 @@ struct SocketInfo : Codable {
     var linkedId: String?
     var accountCode: String?
     var originate_dialmode: String?
-    var priority: String?
+    var priority: Int?
     var answer_status_code: String?
     var callerId: String?
     var channelStateDesc: String?
     var causeTxt: String?
     var uniqueId: String?
+    var bridgeNumChannels: Int?
+    var bridgeTechnology: String?
+    var bridgeType: String?
+    var bridgeUniqueId: String?
 }
 
 struct SocketData : Codable {
@@ -97,6 +101,7 @@ public enum CallStatus {
     case incomingCall
     case ringing
     case connected
+    case onLine
     case ended
     case pause
     case error
@@ -136,6 +141,8 @@ public class DKCloudKit : DKWebSocketDelegate{
     
     private var onCallBlock: ((CallStatus, String?)->Void)?
     
+    private var answerCallBlock: ((CallStatus, String?)->Void)?
+
     private var onSetAgentBlock: ((Bool, Int, String?)->Void)?
     
     private var onTestExtensionBlock: (()->Void)?
@@ -150,6 +157,7 @@ public class DKCloudKit : DKWebSocketDelegate{
         try? mCore.start()
         socketManager.delegate = self
         mRegistrationDelegate = CoreDelegateStub(onCallStateChanged:{[self] (core: Core, call: Call, state: Call.State, message: String) in
+            var messages = message
             if (state == .OutgoingInit) {
                 // First state an outgoing call will go through
                 currentCallStatus = .dialing
@@ -161,6 +169,7 @@ public class DKCloudKit : DKWebSocketDelegate{
             } else if (state == .Connected) {
                 // When the 200 OK has been received
                 currentCallStatus = .connected
+                messages = ""
             } else if (state == .StreamsRunning) {
 
             } else if (state == .IncomingReceived){
@@ -184,7 +193,7 @@ public class DKCloudKit : DKWebSocketDelegate{
                 currentCallStatus = .ended
                 isActiveCall = false
             }
-            onCallBlock?(currentCallStatus,message)
+            onCallBlock?(currentCallStatus,messages)
         }, onAccountRegistrationStateChanged: { [self] (core: Core, account: Account, state: RegistrationState, message: String) in
             
             // If account has been configured correctly, we will go through Progress and Ok states
@@ -251,12 +260,14 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    public func answer(handler:((CallStatus, String)->Void)?){
+    public func answer(handler:((CallStatus, String?)->Void)?){
+        answerCallBlock = handler
         testingLogin {[self] islogin in
             if mCore.currentCall != nil{
                 do {
                     try mCore.currentCall?.accept()
                 } catch {
+                    answerCallBlock?(.error,error.localizedDescription)
                     NSLog(error.localizedDescription)
                 }
             }else{
@@ -391,11 +402,12 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    public func changeAgentStatus(reason:String?, handler: ((Bool, Int, String?)->Void)?){
+    public func changeAgentStatus(reason:String?,agentState:Int, handler: ((Bool, Int, String?)->Void)?){
         onSetAgentBlock = handler
         testingLogin { [self] islogin in
             eventType = .setAgent
-            userAccount.reason = reason ?? ""
+            userAccount.agentState = agentState
+            userAccount.reason = reason
             testingExtensionChange()
         }
     }
@@ -479,20 +491,21 @@ public class DKCloudKit : DKWebSocketDelegate{
                 } else if messageInfo.type == "agentlogout"{
                     if messageInfo.code == "200"{
                         socketManager.disconnect()
+                        userAccount.clearCallInfo()
                         self.loggedIn = false
                         onRegisteBlock?(false,"log Out")
                     }
                 }
             }else if eventType == "AgentState"{
                 if messageInfo.code == "200" {
-                    userAccount.agentState = (userAccount.agentState == 1 ? 0 : 1)
                     onSetAgentBlock?(true, userAccount.agentState, "")
                 }else{
-                    userAccount.agentState = (userAccount.agentState == 1 ? 0 : 1)
                     onSetAgentBlock?(false, userAccount.agentState, messageInfo.message)
                 }
             }else if eventType == "HangUp"{
 
+            }else if eventType == "BridgeEnterEvent"{
+                onCallBlock?(.onLine,"answered successed")
             }
         }
     }

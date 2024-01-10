@@ -1,5 +1,5 @@
 PODS:
-  - DKCloudFramework (1.0.0):
+  - DKCloudFramework (1.0.3):
     - linphone-sdk-novideo
     - Starscream
   - linphone-sdk-novideo (5.3.7)
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DKCloudFramework: 1de5ef30892dc1e0d08aaae2aaea5bc3aa7264bb
+  DKCloudFramework: d64688c0b39cbd003de4bb033ba1a8b6f0624fce
   linphone-sdk-novideo: 731935c531ea7699b5ea88b3299f4cd6b00d09dd
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
