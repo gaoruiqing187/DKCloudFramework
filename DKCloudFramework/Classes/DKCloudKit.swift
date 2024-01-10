@@ -434,6 +434,7 @@ public class DKCloudKit : DKWebSocketDelegate{
         /**websocket 连接失败*/
     public func websocketDidDisconnect(error: String){
         print("Socket 链接失败: \(error)")
+        onRegisteBlock?(false,"socket error")
     }
         /**websocket 接受文字信息*/
     public func websocketDidReceiveMessage(message: String){

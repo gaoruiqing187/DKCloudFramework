@@ -94,10 +94,13 @@ public class WebSocketManager :  WebSocketDelegate{
     private func handleError(_ error: Error?) {
         if let e = error as? WSError {
             print("websocket encountered an error: \(e.message)")
+            delegate?.websocketDidDisconnect(error: e.message)
         } else if let e = error {
             print("websocket encountered an error: \(e.localizedDescription)")
+            delegate?.websocketDidDisconnect(error: e.localizedDescription)
         } else {
             print("websocket encountered an error")
+            delegate?.websocketDidDisconnect(error: "websocket encountered an error")
         }
     }
 
