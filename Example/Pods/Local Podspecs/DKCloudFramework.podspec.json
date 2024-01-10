@@ -1,6 +1,6 @@
 {
   "name": "DKCloudFramework",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "summary": "A short description of DKCloudFramework.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoruiqing187/DKCloudFramework",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "git@github.com:gaoruiqing187/DKCloudFramework.git",
-    "tag": "1.0.4"
+    "tag": "1.0.6"
   },
   "platforms": {
     "ios": "10.0"
