@@ -17,7 +17,7 @@ public protocol DKWebSocketDelegate{
     func websocketDidReceiveMessage(message: String)
 }
 
-public class WebSocketManager :  WebSocketDelegate{
+class WebSocketManager :  WebSocketDelegate{
 
     static let shard = WebSocketManager()
 
@@ -31,7 +31,7 @@ public class WebSocketManager :  WebSocketDelegate{
     var onReceiveMessage: ((String) -> Void)?
     var onError: (() -> Void)?
 
-    private init(){
+    init(){
         isConnected = false
     }
 
@@ -40,10 +40,10 @@ public class WebSocketManager :  WebSocketDelegate{
     }
 
     //, handler:@escaping (Bool,String?)->Void
-    public func registerAccount(url:String){
+    func registerAccount(url:String){
 //        onRegiste = handler
         var request = URLRequest(url: URL(string: url)!)
-        request.timeoutInterval = 5
+        request.timeoutInterval = 30
         socket = WebSocket(request: request)
         socket.delegate = self
         socket.connect()
@@ -60,7 +60,7 @@ public class WebSocketManager :  WebSocketDelegate{
     }
 
 
-    public func didReceive(event: WebSocketEvent, client: WebSocket) {
+    func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
         case .connected(_):
             isConnected = true
@@ -91,7 +91,7 @@ public class WebSocketManager :  WebSocketDelegate{
         }
     }
 
-    private func handleError(_ error: Error?) {
+    func handleError(_ error: Error?) {
         if let e = error as? WSError {
             print("websocket encountered an error: \(e.message)")
             delegate?.websocketDidDisconnect(error: e.message)
@@ -104,7 +104,7 @@ public class WebSocketManager :  WebSocketDelegate{
         }
     }
 
-    private func startHeartbeatTimer() {
+    func startHeartbeatTimer() {
         // 创建一个定时器，每隔一定时间发送心跳包
         Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { timer in
             // 发送心跳包消息
@@ -112,7 +112,7 @@ public class WebSocketManager :  WebSocketDelegate{
         }
     }
 
-    private func sendHeartbeat() {
+    func sendHeartbeat() {
         // 发送心跳包消息到服务器
         var dict : [String:Any] = [:]
         dict["eventType"] = "Heartbeat"
