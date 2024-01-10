@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct TransformUtils {
+struct TransformUtils {
 
-    public static func dictToJson(dict:[String:Any]) -> String?{
+    static func dictToJson(dict:[String:Any]) -> String?{
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: dict, options: [])
 
@@ -24,8 +24,8 @@ public struct TransformUtils {
         }
         return nil
     }
-    
-    public static func convertToStruct(from string: String)-> SocketInfo?{
+
+    static func convertToStruct(from string: String)-> SocketInfo?{
         guard let jsonData = string.data(using: .utf8) else {
             print("无法将字符串转换为数据")
             return nil
@@ -40,7 +40,7 @@ public struct TransformUtils {
         }
     }
 
-    public static func convertToDictionary(from text: String) -> [String: Any]? {
+    static func convertToDictionary(from text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
