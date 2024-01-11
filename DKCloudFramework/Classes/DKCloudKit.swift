@@ -575,22 +575,21 @@ public class DKCloudKit : DKWebSocketDelegate{
     private func testingLogin(handler:@escaping (Bool)->Void){
         print("#1312")
         let status = (socketManager.getConnectedStatus() && mCore.defaultAccount != nil)
-        handler(status)
         if status == false{
             onSetAgentBlock?(false, presetAgentStatus, "You need to call loginAccount() first")
             onCallBlock?(.error, "You need to call loginAccount() first")
+        }else{
+            handler(status)
         }
     }
-    
-    public func getAgentStatus(handler:@escaping (Int,String?)->Void){
-        testingLogin { [self] status in
-            if status == true{
-                handler(self.userAccount.agentState,nil)
-            }else{
-                handler(0,"You need to call loginAccount() first")
-            }
-        }
-    }
+//
+//    public func getAgentStatus(handler:@escaping (Int,String?)->Void){
+//        if (socketManager.getConnectedStatus() && mCore.defaultAccount != nil) {
+//            handler(self.userAccount.agentState,nil)
+//        }else{
+//            handler(0,"You need to call loginAccount() first")
+//        }
+//    }
     
     public func haveAnyCallOnline()->Bool{
         return mCore.callsNb>0
