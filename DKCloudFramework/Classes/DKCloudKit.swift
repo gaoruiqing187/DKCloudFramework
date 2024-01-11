@@ -26,11 +26,21 @@ struct DKAccount : Codable{
     var reason : String?
     
     mutating func clearCallInfo() {
+        projectId = ""
+        agentId = ""
+        extensionId = ""
+        host = ""
+        port = ""
+        token = ""
+        domain = ""
+        agentState = 0
+        password = ""
         linkedId = ""
         phoneNum = ""
         telx = nil
         userfield = nil
         numberGroupId = nil
+        reason = nil
     }
 }
 
@@ -141,8 +151,6 @@ public class DKCloudKit : DKWebSocketDelegate{
     
     private var onCallBlock: ((CallStatus, String?)->Void)?
     
-    private var answerCallBlock: ((CallStatus, String?)->Void)?
-
     private var onSetAgentBlock: ((Bool, Int, String?)->Void)?
     
     private var onTestExtensionBlock: (()->Void)?
@@ -150,6 +158,8 @@ public class DKCloudKit : DKWebSocketDelegate{
     var eventType : EventType = .call
     
     var currentCallStatus = CallStatus.ended
+    
+    private var presetAgentStatus = 0
             
     init(){
         LoggingService.Instance.logLevel = LogLevel.Debug
@@ -242,7 +252,7 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    public func callOut(phoneNum: String, telx: String, userfueld: String, numberGroupId: String, handler: ((CallStatus, String?)->Void)?){
+    public func callOut(phoneNum: String, telx: String?, userfueld: String?, numberGroupId: String?, handler: ((CallStatus, String?)->Void)?){
         onCallBlock = handler
         eventType = .call
         if phoneNum.isEmpty {
@@ -261,17 +271,19 @@ public class DKCloudKit : DKWebSocketDelegate{
     }
     
     public func answer(handler:((CallStatus, String?)->Void)?){
-        answerCallBlock = handler
+        onCallBlock = handler
         testingLogin {[self] islogin in
             if mCore.currentCall != nil{
                 do {
                     try mCore.currentCall?.accept()
+                    onCallBlock?(.onLine,nil)
                 } catch {
-                    answerCallBlock?(.error,error.localizedDescription)
+                    onCallBlock?(.error,error.localizedDescription)
                     NSLog(error.localizedDescription)
                 }
             }else{
                 handler?(.error,"No call is currently in progress")
+                onCallBlock?(.error,"No call is currently in progress")
             }
         }
     }
@@ -280,7 +292,9 @@ public class DKCloudKit : DKWebSocketDelegate{
         testingLogin {[self] islogin in
             if mCore.currentCall != nil{
                 do {
-                    if (mCore.callsNb == 0) { return }
+                    if (mCore.callsNb == 0) {
+                        return
+                    }
                     
                     // If the call state isn't paused, we can get it using core.currentCall
                     let coreCall = (mCore.currentCall != nil) ? mCore.currentCall : mCore.calls[0]
@@ -301,7 +315,9 @@ public class DKCloudKit : DKWebSocketDelegate{
     public func pauseOrResume(){
         testingLogin {[self] islogin in
             do {
-                if (mCore.callsNb == 0) { return }
+                if (mCore.callsNb == 0) {
+                    return
+                }
                 let coreCall = (mCore.currentCall != nil) ? mCore.currentCall : mCore.calls[0]
                 
                 if let call = coreCall {
@@ -315,7 +331,10 @@ public class DKCloudKit : DKWebSocketDelegate{
                 }else{
                     onCallBlock?(.error,"No call is currently in progress")
                 }
-            } catch { NSLog(error.localizedDescription) }
+            } catch {
+                NSLog(error.localizedDescription)
+                onCallBlock?(.error,error.localizedDescription)
+            }
         }
     }
     
@@ -390,7 +409,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     private func setAgentStatus(){
         var dict :[String:Any] = [:]
         dict["eventType"] = "AgentState"
-        let state = (userAccount.agentState == 0 ? 1 : 0)
+        let state = presetAgentStatus
         dict["state"] = state
         if state == 1{
             dict["reason"] = userAccount.reason
@@ -406,7 +425,7 @@ public class DKCloudKit : DKWebSocketDelegate{
         onSetAgentBlock = handler
         testingLogin { [self] islogin in
             eventType = .setAgent
-            userAccount.agentState = agentState
+            presetAgentStatus = agentState
             userAccount.reason = reason
             testingExtensionChange()
         }
@@ -499,8 +518,10 @@ public class DKCloudKit : DKWebSocketDelegate{
                 }
             }else if eventType == "AgentState"{
                 if messageInfo.code == "200" {
+                    userAccount.agentState = presetAgentStatus
                     onSetAgentBlock?(true, userAccount.agentState, "")
                 }else{
+                    presetAgentStatus = 0
                     onSetAgentBlock?(false, userAccount.agentState, messageInfo.message)
                 }
             }else if eventType == "HangUp"{
@@ -554,11 +575,24 @@ public class DKCloudKit : DKWebSocketDelegate{
     private func testingLogin(handler:@escaping (Bool)->Void){
         print("#1312")
         let status = (socketManager.getConnectedStatus() && mCore.defaultAccount != nil)
-        if status == true{
-            handler(status)
-        }else{
-            onSetAgentBlock?(false, userAccount.agentState, "You need to call loginAccount() first")
+        handler(status)
+        if status == false{
+            onSetAgentBlock?(false, presetAgentStatus, "You need to call loginAccount() first")
             onCallBlock?(.error, "You need to call loginAccount() first")
         }
+    }
+    
+    public func getAgentStatus(handler:@escaping (Int,String?)->Void){
+        testingLogin { [self] status in
+            if status == true{
+                handler(self.userAccount.agentState,nil)
+            }else{
+                handler(0,"You need to call loginAccount() first")
+            }
+        }
+    }
+    
+    public func haveAnyCallOnline()->Bool{
+        return mCore.callsNb>0
     }
 }
