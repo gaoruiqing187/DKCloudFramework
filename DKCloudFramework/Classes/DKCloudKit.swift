@@ -99,6 +99,7 @@ struct SocketData : Codable {
     var pjsipport: Int?
     var sipport: Int?
     var realm: String?
+    var linkedId: String?
 }
 
 public protocol DKCloudKitDelegate {
@@ -160,6 +161,8 @@ public class DKCloudKit : DKWebSocketDelegate{
     var currentCallStatus = CallStatus.ended
     
     private var presetAgentStatus = 0
+
+    private var isSeatMute = false
             
     init(){
         LoggingService.Instance.logLevel = LogLevel.Debug
@@ -252,7 +255,7 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    public func callOut(phoneNum: String, telx: String?, userfueld: String?, numberGroupId: String?, handler: ((CallStatus, String?)->Void)?){
+    public func callOut(phoneNum: String, telx: String?, userfueld: String?, numberGroupId: String?, handler:@escaping ((CallStatus, String?)->Void)?){
         onCallBlock = handler
         eventType = .call
         if phoneNum.isEmpty {
@@ -271,19 +274,18 @@ public class DKCloudKit : DKWebSocketDelegate{
     }
     
     public func answer(handler:((CallStatus, String?)->Void)?){
-        onCallBlock = handler
+        // onCallBlock = handler
         testingLogin {[self] islogin in
             if mCore.currentCall != nil{
                 do {
                     try mCore.currentCall?.accept()
-                    onCallBlock?(.onLine,nil)
+                    handler(.onLine,nil)
                 } catch {
-                    onCallBlock?(.error,error.localizedDescription)
+                    handler(.error,error.localizedDescription)
                     NSLog(error.localizedDescription)
                 }
             }else{
-                handler?(.error,"No call is currently in progress")
-                onCallBlock?(.error,"No call is currently in progress")
+                handler(.error,"No call is currently in progress")
             }
         }
     }
@@ -361,6 +363,21 @@ public class DKCloudKit : DKWebSocketDelegate{
             dict["type"] = "atxferHangup"
             dict["agentid"] = userAccount.agentId
             dict["linkedId"] = userAccount.linkedId
+            if let jsonString = TransformUtils.dictToJson(dict: dict) {
+                socketManager.sendMessage(message: jsonString)
+            }
+        }
+    }
+
+    public func onSeatMute(){
+        if mCore.currentCall != nil {
+            var dict :[String:Any] = [:]
+            dict["eventType"] = "AgentInterface"
+            dict["type"] = "musiconhold"
+            dict["agentid"] = userAccount.agentId
+            dict["extension"] = userAccount.extensionId
+            dict["linkedId"] = userAccount.linkedId
+            dict["mode"] = isSeatMute == false ? "stopplay" : "play"
             if let jsonString = TransformUtils.dictToJson(dict: dict) {
                 socketManager.sendMessage(message: jsonString)
             }
@@ -483,7 +500,7 @@ public class DKCloudKit : DKWebSocketDelegate{
             }else if eventType == "Heartbeat"{
                 return
             }else if eventType == "MakeCall"{
-                userAccount.linkedId = messageInfo.linkedId ?? ""
+                userAccount.linkedId = messageInfo.data?.linkedid ?? ""
             }else if eventType == "AgentInterface"{
                 NSLog("31312")
                 if messageInfo.type == "getWebrtc"{
@@ -515,6 +532,8 @@ public class DKCloudKit : DKWebSocketDelegate{
                         self.loggedIn = false
                         onRegisteBlock?(false,"log Out")
                     }
+                } else if messageInfo.type == "musiconhold"{
+                    isSeatMute = !isSeatMute
                 }
             }else if eventType == "AgentState"{
                 if messageInfo.code == "200" {
