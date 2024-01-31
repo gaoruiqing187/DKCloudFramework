@@ -40,6 +40,6 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'Starscream'
-  s.dependency 'linphone-sdk-novideo'
+  s.dependency 'Starscream', '4.0.4'
+  s.dependency 'linphone-sdk-novideo', '5.2.112'
 end
