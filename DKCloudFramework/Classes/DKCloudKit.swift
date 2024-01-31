@@ -437,7 +437,7 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    public func changeAgentStatus(reason:String?,agentState:Int, handler: ((Bool, Int, String?)->Void)?){
+    public func changeAgentStatus(reason:String?,agentState:Int, handler:@escaping (Bool, Int, String?)->Void){
         onSetAgentBlock = handler
         testingLogin { [self] islogin in
             eventType = .setAgent
@@ -590,7 +590,17 @@ public class DKCloudKit : DKWebSocketDelegate{
         registeSip(handler: nil)
     }
     
-//
+    private func testingLogin(handler:@escaping (Bool)->Void){
+        let status = (socketManager.getConnectedStatus() && mCore.defaultAccount != nil)
+        if status == false{
+            onSetAgentBlock?(false, presetAgentStatus, "You need to call loginAccount() first")
+            onCallBlock?(.error, "You need to call loginAccount() first")
+        }else{
+            handler(status)
+        }
+    }
+
+    
 //    public func getAgentStatus(handler:@escaping (Int,String?)->Void){
 //        if (socketManager.getConnectedStatus() && mCore.defaultAccount != nil) {
 //            handler(self.userAccount.agentState,nil)
