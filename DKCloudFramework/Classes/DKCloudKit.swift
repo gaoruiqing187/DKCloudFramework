@@ -590,16 +590,6 @@ public class DKCloudKit : DKWebSocketDelegate{
         registeSip(handler: nil)
     }
     
-    private func testingLogin(handler:@escaping (Bool)->Void){
-        print("#1312")
-        let status = (socketManager.getConnectedStatus() && mCore.defaultAccount != nil)
-        if status == false{
-            onSetAgentBlock?(false, presetAgentStatus, "You need to call loginAccount() first")
-            onCallBlock?(.error, "You need to call loginAccount() first")
-        }else{
-            handler(status)
-        }
-    }
 //
 //    public func getAgentStatus(handler:@escaping (Int,String?)->Void){
 //        if (socketManager.getConnectedStatus() && mCore.defaultAccount != nil) {
