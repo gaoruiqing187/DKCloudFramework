@@ -99,7 +99,7 @@ struct SocketData : Codable {
     var pjsipport: Int?
     var sipport: Int?
     var realm: String?
-    var linkedId: String?
+    var linkedid: String?
 }
 
 public protocol DKCloudKitDelegate {
@@ -187,7 +187,7 @@ public class DKCloudKit : DKWebSocketDelegate{
 
             } else if (state == .IncomingReceived){
                 if isActiveCall {
-                    answer(handler: nil)
+                    answer { _,_ in }
                 }
             } else if (state == .Paused) {
                 // When you put a call in pause, it will became Paused
@@ -255,7 +255,7 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    public func callOut(phoneNum: String, telx: String?, userfueld: String?, numberGroupId: String?, handler:@escaping ((CallStatus, String?)->Void)?){
+    public func callOut(phoneNum: String, telx: String?, userfueld: String?, numberGroupId: String?, handler: @escaping (CallStatus, String?)->Void){
         onCallBlock = handler
         eventType = .call
         if phoneNum.isEmpty {
@@ -273,8 +273,7 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    public func answer(handler:((CallStatus, String?)->Void)?){
-        // onCallBlock = handler
+    public func answer(handler:@escaping (CallStatus, String?)->Void){
         testingLogin {[self] islogin in
             if mCore.currentCall != nil{
                 do {
