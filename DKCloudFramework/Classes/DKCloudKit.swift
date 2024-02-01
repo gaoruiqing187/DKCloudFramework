@@ -517,7 +517,6 @@ public class DKCloudKit : DKWebSocketDelegate{
                     onCallBlock?(.error,messageInfo.message)
                 }
             }else if eventType == "AgentInterface"{
-                NSLog("31312")
                 if messageInfo.type == "getWebrtc"{
                     if messageInfo.data?.realm == userAccount.host{
                         eventTypeAction()
