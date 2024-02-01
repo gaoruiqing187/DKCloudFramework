@@ -108,7 +108,6 @@ public protocol DKCloudKitDelegate {
 }
 
 public enum CallStatus {
-    case dialing
     case incomingCall
     case ringing
     case connected
@@ -153,6 +152,10 @@ public class DKCloudKit : DKWebSocketDelegate{
     
     private var onCallBlock: ((CallStatus, String?)->Void)?
     
+    private var changeOverBlock: ((Bool, String?)->Void)?
+    
+    private var changeOverHangUpBlock: ((Bool, String?)->Void)?
+    
     private var onSetAgentBlock: ((Bool, Int, String?)->Void)?
     
     private var onTestExtensionBlock: (()->Void)?
@@ -165,50 +168,36 @@ public class DKCloudKit : DKWebSocketDelegate{
 
     private var isSeatMute = true
             
+    private var isChangeOver = false
+    
     init(){
         LoggingService.Instance.logLevel = LogLevel.Debug
         try? mCore = Factory.Instance.createCore(configPath: "", factoryConfigPath: "", systemContext: nil)
         try? mCore.start()
         socketManager.delegate = self
         mRegistrationDelegate = CoreDelegateStub(onCallStateChanged:{[self] (core: Core, call: Call, state: Call.State, message: String) in
-            var messages = message
-            if (state == .OutgoingInit) {
-                // First state an outgoing call will go through
-                currentCallStatus = .dialing
-            } else if (state == .OutgoingProgress) {
-                // Right after outgoing init
-            } else if (state == .OutgoingRinging) {
-                // This state will be reached upon reception of the 180 RINGING
-                currentCallStatus = .ringing
-            } else if (state == .Connected) {
-                // When the 200 OK has been received
-                currentCallStatus = .connected
-                messages = ""
-            } else if (state == .StreamsRunning) {
-                print("")
-            } else if (state == .IncomingReceived){
-                if isActiveCall {
-                    answer { _,_ in }
+            let messages = message
+            if [.Error,.Paused,.Released,.IncomingReceived].contains(state) {
+                if (state == .IncomingReceived){
+                    if isActiveCall {
+                        answer { _,_ in }
+                    }
+                } else if (state == .Paused) {
+                    // When you put a call in pause, it will became Paused
+                    currentCallStatus = .pause
+                } else if (state == .Released) {
+                    // Call state will be released shortly after the End state
+                    currentCallStatus = .ended
+                    isActiveCall = false
+                    userAccount.linkedId = ""
+                } else if (state == .Error) {
+                    currentCallStatus = .ended
+                    isActiveCall = false
                 }
-            } else if (state == .Paused) {
-                // When you put a call in pause, it will became Paused
-                currentCallStatus = .pause
-            } else if (state == .PausedByRemote) {
-                // When the remote end of the call pauses it, it will be PausedByRemote
-            } else if (state == .Updating) {
-                // When we request a call update, for example when toggling video
-            } else if (state == .UpdatedByRemote) {
-                // When the remote requests a call update
-            } else if (state == .Released) {
-                // Call state will be released shortly after the End state
-                currentCallStatus = .ended
-                isActiveCall = false
-                userAccount.linkedId = ""
-            } else if (state == .Error) {
-                currentCallStatus = .ended
-                isActiveCall = false
+                if state != .IncomingReceived {
+                    onCallBlock?(currentCallStatus,messages)
+                }
             }
-            onCallBlock?(currentCallStatus,messages)
         }, onAccountRegistrationStateChanged: { [self] (core: Core, account: Account, state: RegistrationState, message: String) in
             
             // If account has been configured correctly, we will go through Progress and Ok states
@@ -291,31 +280,33 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    public func hangUp(){
+    public func hangUp(handler:@escaping (Bool, String?)->Void){
         testingLogin {[self] islogin in
             if mCore.currentCall != nil{
                 do {
                     if (mCore.callsNb == 0) {
+                        handler(false,"No call is currently in progress")
                         return
                     }
-                    
                     // If the call state isn't paused, we can get it using core.currentCall
                     let coreCall = (mCore.currentCall != nil) ? mCore.currentCall : mCore.calls[0]
                     
                     // Terminating a call is quite simple
                     if let call = coreCall {
+                        handler(true,"terminate")
                         try call.terminate()
                     }
                 } catch {
                     NSLog(error.localizedDescription)
+                    handler(false,"No call is currently in progress")
                 }
             }else{
-                onCallBlock?(.error,"No call is currently in progress")
+                handler(false,"No call is currently in progress")
             }
         }
     }
     
-    public func pauseOrResume(){
+    public func pauseOrResume(handler:@escaping (Bool, String?)->Void){
         testingLogin {[self] islogin in
             do {
                 if (mCore.callsNb == 0) {
@@ -326,23 +317,26 @@ public class DKCloudKit : DKWebSocketDelegate{
                 if let call = coreCall {
                     if (call.state != Call.State.Paused && call.state != Call.State.Pausing) {
                         // If our call isn't paused, let's pause it
+                        handler(true,"paused")
                         try call.pause()
                     } else if (call.state != Call.State.Resuming) {
                         // Otherwise let's resume it
+                        handler(true,"resumed")
                         try call.resume()
                     }
                 }else{
-                    onCallBlock?(.error,"No call is currently in progress")
+                    handler(false,"No call is currently in progress")
                 }
             } catch {
-                NSLog(error.localizedDescription)
-                onCallBlock?(.error,error.localizedDescription)
+                handler(false,error.localizedDescription)
             }
         }
     }
     
-    public func changeOver(callNum:String, mode: Int = 0){
+    public func changeOver(callNum:String, mode: Int = 0, handler:@escaping (Bool, String?)->Void){
+        changeOverBlock = handler
         if mCore.currentCall != nil {
+            isChangeOver = true
             var dict :[String:Any] = [:]
             dict["eventType"] = "AgentInterface"
             dict["type"] = "atxfer"
@@ -357,7 +351,8 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
-    public func changeOverHangUp(){
+    public func changeOverHangUp(handler:@escaping (Bool, String?)->Void){
+        changeOverHangUpBlock = handler
         if mCore.currentCall != nil {
             var dict :[String:Any] = [:]
             dict["eventType"] = "AgentInterface"
@@ -516,6 +511,8 @@ public class DKCloudKit : DKWebSocketDelegate{
                 }else{
                     onCallBlock?(.error,messageInfo.message)
                 }
+            }else if eventType == "DialStateEvent"{
+                onCallBlock?(.ringing,"The telephone is ringing")
             }else if eventType == "AgentInterface"{
                 if messageInfo.type == "getWebrtc"{
                     if messageInfo.data?.realm == userAccount.host{
@@ -537,8 +534,18 @@ public class DKCloudKit : DKWebSocketDelegate{
                     }
                 } else if messageInfo.type == "atxfer" {
                     print("3")
+                    if messageInfo.code == "200" {
+                        changeOverBlock?(true,messageInfo.message)
+                    }else{
+                        changeOverBlock?(false,messageInfo.message)
+                    }
                 } else if messageInfo.type == "atxferHangup" {
                     print("#21")
+                    if messageInfo.code == "200" {
+                        changeOverHangUpBlock?(true,messageInfo.message)
+                    }else{
+                        changeOverHangUpBlock?(false,messageInfo.message)
+                    }
                 } else if messageInfo.type == "agentlogout"{
                     if messageInfo.code == "200"{
                         cutDown()
@@ -555,9 +562,11 @@ public class DKCloudKit : DKWebSocketDelegate{
                     onSetAgentBlock?(false, userAccount.agentState, messageInfo.message)
                 }
             }else if eventType == "HangUp"{
-
+                
             }else if eventType == "BridgeEnterEvent"{
-                onCallBlock?(.onLine,userAccount.linkedId)
+                if isChangeOver != true {
+                    onCallBlock?(.onLine,userAccount.linkedId)
+                }
             }
         }
     }
