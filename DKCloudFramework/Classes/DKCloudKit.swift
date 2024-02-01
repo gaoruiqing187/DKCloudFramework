@@ -116,6 +116,7 @@ public enum CallStatus {
     case ended
     case pause
     case error
+    case makecall
 }
 
 enum EventType {
@@ -162,7 +163,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     
     private var presetAgentStatus = 0
 
-    private var isSeatMute = false
+    private var isSeatMute = true
             
     init(){
         LoggingService.Instance.logLevel = LogLevel.Debug
@@ -184,7 +185,7 @@ public class DKCloudKit : DKWebSocketDelegate{
                 currentCallStatus = .connected
                 messages = ""
             } else if (state == .StreamsRunning) {
-
+                print("")
             } else if (state == .IncomingReceived){
                 if isActiveCall {
                     answer { _,_ in }
@@ -202,6 +203,7 @@ public class DKCloudKit : DKWebSocketDelegate{
                 // Call state will be released shortly after the End state
                 currentCallStatus = .ended
                 isActiveCall = false
+                userAccount.linkedId = ""
             } else if (state == .Error) {
                 currentCallStatus = .ended
                 isActiveCall = false
@@ -278,7 +280,7 @@ public class DKCloudKit : DKWebSocketDelegate{
             if mCore.currentCall != nil{
                 do {
                     try mCore.currentCall?.accept()
-                    handler(.onLine,nil)
+                    handler(.connected,nil)
                 } catch {
                     handler(.error,error.localizedDescription)
                     NSLog(error.localizedDescription)
@@ -402,12 +404,21 @@ public class DKCloudKit : DKWebSocketDelegate{
                 }
             }
             
+            cutDown()
+            
             mCore.removeAccount(account: account)
             mCore.clearAccounts()
             mCore.clearAllAuthInfo()
             mCore.refreshRegisters()
             logOutAgent()
         }
+    }
+    
+    private func cutDown(){
+        loggedIn = false
+        onRegisteBlock?(false,"log Out")
+        socketManager.disconnect()
+        userAccount.clearCallInfo()
     }
     
     private func logOutAgent(){
@@ -447,7 +458,6 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
 
-    
     private func testingExtensionChange(){
         let dict = ["eventType":"AgentInterface", "type": "getWebrtc"]
         if let jsonString = TransformUtils.dictToJson(dict: dict){
@@ -479,6 +489,9 @@ public class DKCloudKit : DKWebSocketDelegate{
         if let messageInfo = TransformUtils.convertToStruct(from: message){
             let code = messageInfo.code
             let eventType = messageInfo.eventType
+            if eventType == "Heartbeat"{
+                return
+            }
             if eventType == "AgentLogin" {
                 if code == "200" {
                     if let data = messageInfo.data {
@@ -496,10 +509,13 @@ public class DKCloudKit : DKWebSocketDelegate{
                 }else if code == "401" {
                     logOut()
                 }
-            }else if eventType == "Heartbeat"{
-                return
             }else if eventType == "MakeCall"{
-                userAccount.linkedId = messageInfo.data?.linkedid ?? ""
+                if messageInfo.code == "200" {
+                    userAccount.linkedId = messageInfo.data?.linkedid ?? ""
+                    onCallBlock?(.makecall,userAccount.linkedId)
+                }else{
+                    onCallBlock?(.error,messageInfo.message)
+                }
             }else if eventType == "AgentInterface"{
                 NSLog("31312")
                 if messageInfo.type == "getWebrtc"{
@@ -526,10 +542,7 @@ public class DKCloudKit : DKWebSocketDelegate{
                     print("#21")
                 } else if messageInfo.type == "agentlogout"{
                     if messageInfo.code == "200"{
-                        socketManager.disconnect()
-                        userAccount.clearCallInfo()
-                        self.loggedIn = false
-                        onRegisteBlock?(false,"log Out")
+                        cutDown()
                     }
                 } else if messageInfo.type == "musiconhold"{
                     isSeatMute = !isSeatMute
@@ -545,11 +558,10 @@ public class DKCloudKit : DKWebSocketDelegate{
             }else if eventType == "HangUp"{
 
             }else if eventType == "BridgeEnterEvent"{
-                onCallBlock?(.onLine,"answered successed")
+                onCallBlock?(.onLine,userAccount.linkedId)
             }
         }
     }
-    
     
     private func registeSip(handler:(()->Void)?){
         registeBlock = handler
@@ -599,17 +611,8 @@ public class DKCloudKit : DKWebSocketDelegate{
             handler(status)
         }
     }
-
-    
-//    public func getAgentStatus(handler:@escaping (Int,String?)->Void){
-//        if (socketManager.getConnectedStatus() && mCore.defaultAccount != nil) {
-//            handler(self.userAccount.agentState,nil)
-//        }else{
-//            handler(0,"You need to call loginAccount() first")
-//        }
-//    }
     
     public func haveAnyCallOnline()->Bool{
-        return mCore.callsNb>0
+        return mCore.callsNb > 0
     }
 }
