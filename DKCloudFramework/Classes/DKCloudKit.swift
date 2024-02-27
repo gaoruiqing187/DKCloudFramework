@@ -620,6 +620,11 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
+    public func isLogin() -> Bool {
+        return mCore.defaultAccount != nil
+    }
+
+    
     public func haveAnyCallOnline()->Bool{
         return mCore.callsNb > 0
     }
