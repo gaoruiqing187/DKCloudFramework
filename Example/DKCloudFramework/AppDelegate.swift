@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import DKCloudFramework
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,12 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        DKCloudKit.manager.loginAccount(url: "", projectId: "70017001001", password: "12345678", agentId: "8002", extensionId: "1220", token: "794568122A2A8BD56FDB400B24D66598") { state, reason in
-            print("reason === \(String(describing: reason))")
-        }
+        
+        
+//        DKCloudKit.manager.loginAccount(url: "", projectId: "70017001001", password: "12345678", agentId: "8002", extensionId: "1220", token: "794568122A2A8BD56FDB400B24D66598") { state, reason in
+//            print("reason === \(String(describing: reason))")
+//        }
         
         return true
     }

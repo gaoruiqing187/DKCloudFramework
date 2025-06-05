@@ -1,7 +1,7 @@
 PODS:
-  - DKCloudFramework (1.0.8):
-    - linphone-sdk-novideo
-    - Starscream
+  - DKCloudFramework (1.0.17):
+    - linphone-sdk-novideo (= 5.3.7)
+    - Starscream (= 4.0.4)
   - linphone-sdk-novideo (5.3.7)
   - Starscream (4.0.4)
 
@@ -21,10 +21,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DKCloudFramework: f540633073ad0471e2a2f9647f58111930731248
+  DKCloudFramework: 62ea49639233e2808d9540bc1b09450c55ae035d
   linphone-sdk-novideo: 731935c531ea7699b5ea88b3299f4cd6b00d09dd
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: bfa17c95adf18a9a9b5bac625b7c2e193cf4420d
+PODFILE CHECKSUM: 61b67be726a7700f5f3d86e8b5c85097e299e25a
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.16.2
