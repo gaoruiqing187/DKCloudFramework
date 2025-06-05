@@ -281,7 +281,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     }
     
     public func hangUp(handler:@escaping (Bool, String?)->Void){
-        testingLogin {[self] islogin in
+        if mCore != nil{
             if mCore.currentCall != nil{
                 do {
                     if (mCore.callsNb == 0) {
@@ -307,7 +307,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     }
     
     public func pauseOrResume(handler:@escaping (Bool, String?)->Void){
-        testingLogin {[self] islogin in
+        if mCore != nil{
             do {
                 if (mCore.callsNb == 0) {
                     return
@@ -606,12 +606,24 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
+    public func refreshRegisterState(){
+        guard let core = mCore, let account = core.defaultAccount else {
+            onRegisteBlock?(false, "请重新登录")
+            return
+        }
+        
+        account.refreshRegister()
+    }
+    
     private func registeSip(){
+        if mCore != nil{
+            mCore.refreshRegisters()
+        }
         registeSip(handler: nil)
     }
     
     private func testingLogin(handler:@escaping (Bool)->Void){
-        let status = (socketManager.getConnectedStatus() && mCore.defaultAccount != nil)
+        let status = (socketManager.getConnectedStatus() && mCore.defaultAccount?.state == .Ok)
         if status == false{
             onSetAgentBlock?(false, presetAgentStatus, "You need to call loginAccount() first")
             onCallBlock?(.error, "You need to call loginAccount() first")

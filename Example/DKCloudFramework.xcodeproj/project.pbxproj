@@ -212,12 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = P7RVNFG9WD;
+						DevelopmentTeam = TW6XJXZ59L;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = P7RVNFG9WD;
+						DevelopmentTeam = TW6XJXZ59L;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -521,10 +521,10 @@
 					x86_64,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P7RVNFG9WD;
+				DEVELOPMENT_TEAM = TW6XJXZ59L;
 				EXCLUDED_ARCHS = i386;
 				INFOPLIST_FILE = DKCloudFramework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				ONLY_ACTIVE_ARCH = YES;
@@ -546,10 +546,10 @@
 					x86_64,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P7RVNFG9WD;
+				DEVELOPMENT_TEAM = TW6XJXZ59L;
 				EXCLUDED_ARCHS = i386;
 				INFOPLIST_FILE = DKCloudFramework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -564,7 +564,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0085BEDB8568951C7B9D5D22 /* Pods-DKCloudFramework_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = P7RVNFG9WD;
+				DEVELOPMENT_TEAM = TW6XJXZ59L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -587,7 +587,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4AFA55F1FE8B4FFD55777861 /* Pods-DKCloudFramework_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = P7RVNFG9WD;
+				DEVELOPMENT_TEAM = TW6XJXZ59L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
