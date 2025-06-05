@@ -233,20 +233,21 @@ public class DKCloudKit : DKWebSocketDelegate{
         socketManager.registerAccount(url: urls)
     }
     
-    private func callOut(){
+    private func callOut(encryptFlag:Int){
         var dict :[String:Any] = [:]
         dict["eventType"] = "MakeCall"
         dict["telx"] = userAccount.telx
         dict["userfield"] = userAccount.userfield
         dict["numberGroupId"] = userAccount.numberGroupId
         dict["callednum"] = userAccount.phoneNum
+        dict["encryptFlag"] = encryptFlag
         
         if let jsonString = TransformUtils.dictToJson(dict: dict) {
             socketManager.sendMessage(message: jsonString)
         }
     }
     
-    public func callOut(phoneNum: String, telx: String?, userfueld: String?, numberGroupId: String?, handler: @escaping (CallStatus, String?)->Void){
+    public func callOut(phoneNum: String, encryptFlag: Int = 1, telx: String?, userfueld: String?, numberGroupId: String?, handler: @escaping (CallStatus, String?)->Void){
         onCallBlock = handler
         eventType = .call
         if phoneNum.isEmpty {
@@ -254,14 +255,33 @@ public class DKCloudKit : DKWebSocketDelegate{
             return
         }
         
-        testingLogin {[self] islogin in
-            isActiveCall = true
-            userAccount.phoneNum = phoneNum
-            userAccount.telx = telx
-            userAccount.userfield = userfueld
-            userAccount.numberGroupId = numberGroupId
-            testingExtensionChange()
-        }
+        isActiveCall = true
+        userAccount.phoneNum = phoneNum
+        userAccount.telx = telx
+        userAccount.userfield = userfueld
+        userAccount.numberGroupId = numberGroupId
+        callOut(encryptFlag:encryptFlag)
+//        if isEncrypt {
+//            if let phone = AESUtils.decrypt(phoneNum){
+//                testingLogin {[self] islogin in
+//                    isActiveCall = true
+//                    userAccount.phoneNum = phone
+//                    userAccount.telx = telx
+//                    userAccount.userfield = userfueld
+//                    userAccount.numberGroupId = numberGroupId
+//                    testingExtensionChange()
+//                }
+//            }
+//        }else{
+//            testingLogin {[self] islogin in
+//                isActiveCall = true
+//                userAccount.phoneNum = phoneNum
+//                userAccount.telx = telx
+//                userAccount.userfield = userfueld
+//                userAccount.numberGroupId = numberGroupId
+//                testingExtensionChange()
+//            }
+//        }
     }
     
     public func answer(handler:@escaping (CallStatus, String?)->Void){
@@ -281,7 +301,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     }
     
     public func hangUp(handler:@escaping (Bool, String?)->Void){
-        testingLogin {[self] islogin in
+        if mCore != nil{
             if mCore.currentCall != nil{
                 do {
                     if (mCore.callsNb == 0) {
@@ -307,7 +327,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     }
     
     public func pauseOrResume(handler:@escaping (Bool, String?)->Void){
-        testingLogin {[self] islogin in
+        if mCore != nil{
             do {
                 if (mCore.callsNb == 0) {
                     return
@@ -462,7 +482,7 @@ public class DKCloudKit : DKWebSocketDelegate{
     
     private func eventTypeAction(){
         if eventType == .call {
-            callOut()
+//            callOut()
         }else{
             setAgentStatus()
         }
@@ -606,12 +626,24 @@ public class DKCloudKit : DKWebSocketDelegate{
         }
     }
     
+    public func refreshRegisterState(){
+        guard let core = mCore, let account = core.defaultAccount else {
+            onRegisteBlock?(false, "请重新登录")
+            return
+        }
+        
+        account.refreshRegister()
+    }
+    
     private func registeSip(){
+        if mCore != nil{
+            mCore.refreshRegisters()
+        }
         registeSip(handler: nil)
     }
     
     private func testingLogin(handler:@escaping (Bool)->Void){
-        let status = (socketManager.getConnectedStatus() && mCore.defaultAccount != nil)
+        let status = (socketManager.getConnectedStatus() && mCore.defaultAccount?.state == .Ok)
         if status == false{
             onSetAgentBlock?(false, presetAgentStatus, "You need to call loginAccount() first")
             onCallBlock?(.error, "You need to call loginAccount() first")
