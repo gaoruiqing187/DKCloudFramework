@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKCloudFramework
 
 class ViewController: UIViewController {
 

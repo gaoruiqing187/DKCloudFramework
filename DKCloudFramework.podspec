@@ -7,7 +7,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'DKCloudFramework'
-  s.version          = '1.0.17'
+  s.version          = '1.0.18'
   s.summary          = 'A short description of DKCloudFramework.'
 
 # This description is used to generate tags and improve search results.

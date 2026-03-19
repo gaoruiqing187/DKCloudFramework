@@ -210,6 +210,11 @@ public class DKCloudKit : DKWebSocketDelegate{
                 self.loggedIn = false
             } else if (state == .Failed){
                 self.loggedIn = false
+                if let account = mCore.defaultAccount {
+                    mCore.removeAccount(account: account)
+                    mCore.clearAccounts()
+                    mCore.clearAllAuthInfo()
+                }
                 onRegisteBlock?(false,message)
             }
         })
@@ -261,27 +266,6 @@ public class DKCloudKit : DKWebSocketDelegate{
         userAccount.userfield = userfueld
         userAccount.numberGroupId = numberGroupId
         callOut(encryptFlag:encryptFlag)
-//        if isEncrypt {
-//            if let phone = AESUtils.decrypt(phoneNum){
-//                testingLogin {[self] islogin in
-//                    isActiveCall = true
-//                    userAccount.phoneNum = phone
-//                    userAccount.telx = telx
-//                    userAccount.userfield = userfueld
-//                    userAccount.numberGroupId = numberGroupId
-//                    testingExtensionChange()
-//                }
-//            }
-//        }else{
-//            testingLogin {[self] islogin in
-//                isActiveCall = true
-//                userAccount.phoneNum = phoneNum
-//                userAccount.telx = telx
-//                userAccount.userfield = userfueld
-//                userAccount.numberGroupId = numberGroupId
-//                testingExtensionChange()
-//            }
-//        }
     }
     
     public func answer(handler:@escaping (CallStatus, String?)->Void){
@@ -495,6 +479,11 @@ public class DKCloudKit : DKWebSocketDelegate{
     public func websocketDidDisconnect(error: String){
         print("Socket 链接失败: \(error)")
         onRegisteBlock?(false,"socket error")
+        if let account = mCore.defaultAccount {
+            mCore.removeAccount(account: account)
+            mCore.clearAccounts()
+            mCore.clearAllAuthInfo()
+        }
     }
         /**websocket 接受文字信息*/
     public func websocketDidReceiveMessage(message: String){
